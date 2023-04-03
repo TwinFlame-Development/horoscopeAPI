@@ -189,6 +189,35 @@ If the ‘range’ request parameter is present, the API returns the following J
       "latest_date": "4/16/2023"
     }
 
+Projects using the TwinFlame Horoscope API
+========================
+
+.. raw:: html
+
+   <table> 
+    <tr>
+      <th>Project</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://apps.apple.com/us/app/twinflame/id1461412482?ls=1">TwinFlame for Apple</a>
+      </td>
+      <td>iOS</td>
+      <td>TwinFlame astrology app for iOS, iPadOS, & tvOS.</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://play.google.com/store/apps/details?id=com.twinflamedev.twinflame">TwinFlame for Android</a>
+      </td>
+      <td>iOS</td>
+      <td>TwinFlame astrology app for Android phones & tablets.</td>
+    </tr>
+    
+    
+    </table>
+
 
 
 
