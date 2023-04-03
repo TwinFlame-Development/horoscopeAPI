@@ -33,7 +33,7 @@ Yes -> The TwinFlame Horoscope API subscription allows developers to access and 
 
 Subscription service horoscopes are written and reviewed by TwinFlame’s in-house astrologers and the content is copyrighted by TwinFlame Development, LLC.  Subscription to the API allows you license to use the horoscopes in your applications.
 
-Interested in the subscroption? Feel free to contact us at partnerships@twinflamedev.com
+Interested in the subscription? Feel free to contact us at partnerships@twinflamedev.com
 
 
 API Endpoint 
