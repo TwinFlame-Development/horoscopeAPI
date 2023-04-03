@@ -25,7 +25,7 @@ Why TwinFlame?
 ==========
 We’re in the business of astrology apps and astrology content. This is what we use. 
 
-This API is used to provide the daily horoscopes used by TwinFlame’s Android and iOS applications, which has a sizable active user base. It's lightwight, fast, and stable.
+This API is used to provide the daily horoscopes used by TwinFlame’s Android and iOS applications, which have a sizable active user base. It's lightwight, fast, and stable.
 
 Do you offer a subscription Horoscope API?
 ==============
