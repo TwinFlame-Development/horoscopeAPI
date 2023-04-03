@@ -211,7 +211,7 @@ Projects using the TwinFlame Horoscope API
       <td>
         <a href="https://play.google.com/store/apps/details?id=com.twinflamedev.twinflame">TwinFlame for Android</a>
       </td>
-      <td>iOS</td>
+      <td>Android</td>
       <td>TwinFlame astrology app for Android phones & tablets.</td>
     </tr>
     
