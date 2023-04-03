@@ -21,6 +21,12 @@ The TwinFlame Horoscope API is for a developer who wants an API that provides ho
 
 Feel free to contribute on `Github <https://github.com/TwinFlame-Development/horoscopeAPI>`_.
 
+Why TwinFlame?
+==========
+We’re in the business of astrology apps and astrology content. This is what we use. 
+
+This API is used to provide the daily horoscopes used by TwinFlame’s Android and iOS applications, which has a sizable active user base. It's lightwight, fast, and stable.
+
 Do you offer a subscription Horoscope API?
 ==============
 Yes -> The TwinFlame Horoscope API subscription allows developers to access and integrate TwinFlame’s daily horoscopes with other applications. The API retrieves daily horoscopes for a specific date.  The API has a rolling set of daily horoscopes.  The available date range varies, but in general the current date +/- 7 days is available in the API.
@@ -29,11 +35,30 @@ Subscription service horoscopes are written and reviewed by TwinFlame’s in-hou
 
 Interested in the subscroption? Feel free to contact us at partnerships@twinflamedev.com
 
-Why TwinFlame?
-==========
-We’re in the business of astrology apps and astrology content. This is what we use. 
 
-This API provides the daily horoscopes used by TwinFlame’s Android and iOS applications, which has a sizable active user base. It's lightwight, fast, and stable.
+API Endpoint 
+==========
+A hosted test endpoint is available:
+
+.. raw:: html
+
+   <table> 
+    <tr>
+      <th>Method</th>
+      <th>URL</th>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test</td>
+    </tr>
+     
+    </table>
+    
+Please use the testing authentication token:
+``mmEUtLATc8w_UNnHuR2``
+
+Note: Query the test endpoint with the ``range`` parameter to understand what testing date-ranges are available.
+
 
 Request Parameters
 ==========
@@ -74,7 +99,7 @@ The API requires the following query parameters:
 
 Response Parameters
 ==========
-The API returns the following JSON response:
+The API returns the following parameters in a JSON response:
 
 .. raw:: html
 
@@ -85,13 +110,38 @@ The API returns the following JSON response:
       <th>Description</th>
     </tr>
     <tr>
-      <td>‘tbd’</td>
+      <td>‘current_date’</td>
       <td>String</td>
-      <td>TBD</td>
+      <td>The date associated with the horoscope information.</td>
+    </tr>
+     <tr>
+      <td>‘lucky_time’</td>
+      <td>String</td>
+      <td>A lucky time for the date requested.</td>
+    </tr>
+    <tr>
+      <td>‘lucky_number’</td>
+      <td>String</td>
+      <td>A lucky number for the date requested.</td>
+    </tr>
+     <tr>
+      <td>‘mood’</td>
+      <td>String</td>
+      <td>A mood of the day for the requested date.</td>
+    </tr>
+    <tr>
+      <td>‘color’</td>
+      <td>String</td>
+      <td>A color of the day for the requested date.</td>
+    </tr>
+    <tr>
+      <td>‘description’</td>
+      <td>String</td>
+      <td>A horoscope for the requested date and sign.</td>
     </tr>
    </table>
 
-If the ‘range’ request parameter is present, the API returns the following JSON response:
+If the ‘range’ request parameter is present, the API returns the following parameters in a JSON response:
 
 .. raw:: html
 
@@ -114,9 +164,9 @@ If the ‘range’ request parameter is present, the API returns the following J
    
    </table>
 
-Response JSON
+Response JSON Examples
 ^^^^^^
-The API returns the following JSON response:
+The API returns the following JSON response (example):
 
 .. code-block:: json
 
@@ -129,6 +179,16 @@ The API returns the following JSON response:
       "color": "Turquoise",
       "description": "Saturday, April 1st, 2023 (Moon in Leo): Scorpio, today you may feel a need for self-expression and creativity. You may want to showcase your unique talents and abilities. Use this energy to express yourself authentically and confidently. Some past events that occurred on this day include the founding of the city of Baghdad by the Abbasid caliph Al-Mansur. This event could be relevant to Scorpios as they may be seeking to establish a new cultural or intellectual center in their own lives."
     }
+
+If the ‘range’ request parameter is present, the API returns the following JSON response (example):
+
+.. code-block:: json
+
+    {
+      "earliest_date": "3/27/2023",
+      "latest_date": "4/16/2023"
+    }
+
 
 
 
