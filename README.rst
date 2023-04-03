@@ -50,7 +50,7 @@ The API requires the following query parameters:
     <tr>
       <td>‘date’</td>
       <td>Yes</td>
-      <td>The date for which to retrieve the horoscope information. The date format should be MM-DD-YYYY.</td>
+      <td>The date for which to retrieve the horoscope information. The date format should be MM-DD-YYYY or ‘today’, ‘tomorrow’, ‘yesterday’</td>
     </tr>
     <tr>
       <td>‘sign’</td>
