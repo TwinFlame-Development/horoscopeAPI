@@ -48,7 +48,7 @@ A hosted test endpoint is available:
       <th>URL</th>
     </tr>
     <tr>
-      <td>POST</td>
+      <td>GET</td>
       <td>https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test</td>
     </tr>
      
