@@ -245,10 +245,39 @@ exports.horoscopeAPIprod = async (req, res) => {
 
     if (zodiacSigns.includes(searchSign)) {
         //valid
+    } else if (searchSign == 'All') {
+        //call for all of the signs for the requested date:
+        const allSignObj = []; 
+        
+        zodiacSigns.forEach((sign) => {
+            let signObject = {
+                [sign]: {
+                    'current_date': date,
+                    'compatibility': horoscopeJSON[sign][date]["compatibility"],
+                    'lucky_time': horoscopeJSON[sign][date]["lucky_time"],
+                    'lucky_number': horoscopeJSON[sign][date]["lucky_number"],
+                    'mood': horoscopeJSON[sign][date]["mood"],
+                    'description': horoscopeJSON[sign][date]["description"],
+                    'color': horoscopeJSON[sign][date]["color"],
+                }
+              };
+              
+              allSignObj.push(signObject);
+          });
+
+        //const allSignJsonString = JSON.stringify(allSignObj);
+                      
+        let goodToken = '200 - Success -> Token : ' + token + ' -> for ALL on '  + date;
+        console.info(goodToken);
+
+        res.status(200).json(allSignObj);
+
+        return
+
     } else {
         //not a valid sign:
         console.info('400 Bad Request - Invalid Zodiac Sign -> ' + searchSign);
-        res.status(400).send('Bad Request - Invalide sign provided');
+        res.status(400).send('Bad Request - Invalid sign provided');
         return;
     }
 
