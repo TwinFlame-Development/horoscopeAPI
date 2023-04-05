@@ -80,7 +80,7 @@ The API requires the following query parameters:
     <tr>
       <td>‘sign’</td>
       <td>Yes</td>
-      <td>The zodiac sign for which to retrieve the horoscope information. The sign should be in lowercase.</td>
+      <td>The zodiac sign for which to retrieve the horoscope information. The sign should be in lowercase. Alternatively this can be 'all' to return all sign horoscopes for a given date.</td>
     </tr>
     <tr>
       <td>‘token’</td>
