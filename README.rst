@@ -10,14 +10,14 @@ TwinFlame - The Horoscope API
    :alt: twinflame horoscope api logo
    :align: center
 
-- Source code helps you build your own API & content
+- Source code helps you build your own API & serve content
 - We offer subscription access to our content using this API
 
 What is the TwinFlame Horoscope API?
 ==============
 This API provides horoscope information for the given date and zodiac sign. It requires a valid token to access the API. If the token is invalid or has expired, the API returns an unauthorized response.
 
-The TwinFlame Horoscope API is for a developer who wants an API that provides horoscope info for sun signs for a recent day.  The primary use-case of the API is to display daily horoscopes in an application.
+The TwinFlame Horoscope API is for a developer who wants an API that provides horoscope info for zodiac signs for a recent day.  The primary use-case of the API is to display daily or weekly horoscopes in an application.
 
 Feel free to contribute on `Github <https://github.com/TwinFlame-Development/horoscopeAPI>`_.
 
@@ -29,12 +29,11 @@ This API is used to provide the daily horoscopes used by TwinFlame’s Android a
 
 Do you offer a subscription Horoscope API?
 ==============
-Yes -> The TwinFlame Horoscope API subscription allows developers to access and integrate TwinFlame’s daily horoscopes with other applications. The API retrieves daily horoscopes for a specific date.  The API has a rolling set of daily horoscopes.  The available date range varies, but in general the current date +/- 7 days is available in the API.
+Yes -> The TwinFlame Horoscope API subscription allows developers to access and integrate TwinFlame’s daily horoscopes with other applications. The API retrieves daily (or weekly) horoscopes for a specific date.  The API has a rolling set of daily horoscopes.  The available date range varies, but in general the current date +/- 7 days is available in the API.
 
 Subscription service horoscopes are written and reviewed by TwinFlame’s in-house astrologers and the content is copyrighted by TwinFlame Development, LLC.  Subscription to the API allows you license to use the horoscopes in your applications.
 
 Interested in the subscription? Feel free to contact us at partnerships@twinflamedev.com
-
 
 API Endpoint 
 ==========
@@ -58,6 +57,8 @@ Please use the testing authentication token:
 ``mmEUtLATc8w_UNnHuR2``
 
 Note: Query the test endpoint with the ``range`` parameter to understand what testing date-ranges are available.
+
+Please contact us if you're interested in a trial production token at partnerships@twinflamedev.com
 
 
 Request Parameters
@@ -92,7 +93,11 @@ The API requires the following query parameters:
       <td>No</td>
       <td>An optional parameter that, when present, returns the earliest and latest dates for which horoscope information is available.</td>
     </tr>
-    
+    <tr>
+      <td>‘nodate’</td>
+      <td>No</td>
+      <td>An optional parameter that, when present, invokes a data scrubber on the returned description. We use the scrubber in our hosted solution to strip the horoscopes of the leading date qualifer.</td>
+    </tr>
    
     
     </table>
@@ -141,6 +146,28 @@ The API returns the following parameters in a JSON response:
     </tr>
    </table>
 
+When called for a weekly horoscope (invoked with 'date' as 'next_week', 'last_week', or 'this_week'), the API returns the following parameters in a JSON response:
+
+.. raw:: html
+
+   <table> 
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>‘current_date’</td>
+      <td>String</td>
+      <td>The date associated with the horoscope information. This is the Monday of the requested weekly horoscope.</td>
+    </tr>
+    <tr>
+      <td>‘description’</td>
+      <td>String</td>
+      <td>A weekly horoscope for the requested week and sign.</td>
+    </tr>
+   </table>
+   
 If the ‘range’ request parameter is present, the API returns the following parameters in a JSON response:
 
 .. raw:: html
