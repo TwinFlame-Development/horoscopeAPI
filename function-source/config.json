@@ -2038,5 +2038,175 @@
       "lucky_time": "04:00",
       "mood": "Excited"
     }
+  },
+  "weekly": {
+    "Aries": {
+      "03-27-2023": {
+        "description": "Aries, this week will be full of opportunities for growth and progress. You may feel a surge of energy and motivation to take on new challenges and tackle existing ones with renewed vigor. It's important to remember to pace yourself, however, as burnout could be a risk if you take on too much at once."
+      },
+      "04-03-2023": {
+        "description": "Aries, this week is all about taking control of your life. You are in charge of your destiny, so don't be afraid to take the reins and make things happen. This is a great week for taking risks and trying new things, as your natural confidence and energy are high. However, be careful not to let your ego get in the way of your success. Remember that teamwork is important, and sometimes you need to listen to others to achieve your goals. Trust your instincts and stay focused on your priorities, and you will find success in all areas of your life."
+      },
+      "04-10-2023": {
+        "description": "For the week of April 10th, 2023, Aries individuals may experience some challenges and obstacles in their personal and professional lives. However, they will have the strength and determination to overcome them. This week is a good time for Aries to reflect on their goals and aspirations and make plans for the future. They should also pay attention to their health and well-being and make time for relaxation and self-care activities."
+      },
+      "04-17-2023": {
+        "description": "The week ahead for Aries is focused on creativity and self-expression. You may find yourself feeling more inspired than usual, with plenty of new ideas and projects to pursue. This is a great time to take risks and put yourself out there. However, you'll also need to balance your enthusiasm with practical considerations, so make sure to stay grounded and focused on your goals."
+      }
+    },
+    "Taurus": {
+      "03-27-2023": {
+        "description": "Dear Taurus, this week you may feel a bit overwhelmed with responsibilities and tasks. It is important to prioritize your time and focus on the most important tasks to avoid feeling burnt out. Take breaks when needed and don't hesitate to ask for help if you need it. On the relationship front, this is a good week for strengthening bonds with loved ones and making time for quality conversations. Your communication skills are highlighted, so make sure to express your thoughts and feelings clearly. Remember to take care of yourself and prioritize self-care during this busy week."
+      },
+      "04-03-2023": {
+        "description": "Opportunities for growth and success may present themselves this week. Stay focused on your goals and be open to new possibilities. Trust your intuition and take bold steps towards your ambitions."
+      },
+      "04-10-2023": {
+        "description": "For Taurus, the week of April 10th, 2023, is likely to bring some unexpected changes and challenges. It's important to stay adaptable and open-minded in the face of these shifts. Trust in your abilities to navigate the unknown, and remember to prioritize self-care to maintain your balance and wellbeing."
+      },
+      "04-17-2023": {
+        "description": "For the week of April 17th, 2023, Taurus, you may feel like you are getting a second chance at something important. It's a good time to tie up loose ends and complete unfinished business, especially if it relates to your personal goals or relationships. Trust your instincts and take action, but don't be afraid to seek advice from those you trust. Your hard work and perseverance will pay off in the end. Keep a positive outlook and stay focused on your priorities."
+      }
+    },
+    "Gemini": {
+      "03-27-2023": {
+        "description": "This week, Gemini, you may feel a bit scattered and find it difficult to focus on one thing at a time. It's important to take breaks and give yourself time to recharge. Trust your instincts and don't be afraid to speak up for what you believe in. Keep an open mind and be willing to listen to others' perspectives. This week may bring some unexpected challenges, but stay positive and trust that everything will work out in the end."
+      },
+      "04-03-2023": {
+        "description": "Gemini individuals may find that communication is key during this week, as their natural talent for networking and connecting with others may be highlighted. This may be a good time to focus on strengthening relationships with loved ones and colleagues, as well as networking with new acquaintances. However, it may also be important to balance social activities with alone time to recharge and reflect."
+      },
+      "04-10-2023": {
+        "description": "For the week of April 10th, 2023, Gemini, you may find yourself feeling a bit more introverted than usual. This is a good time to focus on self-reflection and introspection, and to take a break from socializing if you need it. You may also have some important insights or breakthroughs during this time, so pay attention to your inner voice and trust your intuition. Career-wise, you may need to be more assertive and speak up for yourself in order to get what you want. Trust in your abilities and don't be afraid to take risks."
+      },
+      "04-17-2023": {
+        "description": "This week, you may feel a strong desire for change and to explore new opportunities. However, it's important to approach things with a level head and avoid making impulsive decisions. Take the time to weigh your options and consider the potential consequences before taking action."
+      }
+    },
+    "Cancer": {
+      "03-27-2023": {
+        "description": "You may feel more emotional than usual this week, Cancer. It's important to take care of yourself and prioritize your own needs. Trust your instincts and don't be afraid to express yourself. This could be a good time for self-reflection and inner growth. Don't be afraid to reach out to loved ones for support if needed. Focus on finding a balance between your personal and professional life. Stay organized and try not to overcommit yourself to avoid feeling overwhelmed."
+      },
+      "04-03-2023": {
+        "description": "This week, you may find yourself needing to make some important decisions related to your career or financial situation. It's important to weigh your options carefully and seek advice from trusted sources before taking action. On the personal front, you may feel a sense of restlessness or discontentment, but try not to let this affect your relationships with loved ones. Take some time for self-reflection and try to identify what's causing these feelings. Overall, it's a good week to focus on finding balance between your professional and personal life."
+      },
+      "04-10-2023": {
+        "description": "This week is all about balancing your personal and professional life. You may find yourself pulled in multiple directions, but it's important to prioritize and make time for both. Avoid taking on more than you can handle and learn to say no when necessary. Your intuition will guide you in making the right decisions, so trust your gut. Keep an open mind and be willing to adapt to changes that may arise. This is a good time to focus on your long-term goals and take steps towards achieving them. Remember to take care of yourself and find time for self-care activities that bring you joy and relaxation."
+      },
+      "04-17-2023": {
+        "description": "For Cancer, the week of April 17th, 2023, could bring some challenges in terms of communication and social interactions. You may find it hard to express your thoughts and feelings clearly, which could lead to misunderstandings with others. It's important to take some time to reflect on your needs and priorities and communicate them effectively."
+      }
+    },
+    "Leo": {
+      "03-27-2023": {
+        "description": "During this week, you may feel a strong urge to focus on your personal and domestic life. You may find yourself wanting to spend more time at home or with your family, and this could lead to a sense of peace and calm. However, be careful not to neglect your professional responsibilities. It's important to maintain a balance between your personal and professional life. This week may also bring an opportunity for financial gain, but make sure you weigh the risks before making any investments. Overall, this is a good time for introspection and reflection, and for laying the groundwork for future success."
+      },
+      "04-03-2023": {
+        "description": "This week, you may find yourself feeling more focused and motivated than usual. It's a great time to take on new projects or pursue your passions, as your energy levels are high and your enthusiasm is contagious. Your natural leadership skills may also come to the forefront, making it easier for you to take charge of situations and guide others towards success. However, be careful not to let your confidence turn into arrogance, as this could create tension in your relationships. Remember to stay humble and open to others' ideas, and you'll find that your endeavors are met with even greater success."
+      },
+      "04-10-2023": {
+        "description": "This week, you may experience a renewed sense of focus and motivation to pursue your goals. Your confidence and self-assuredness will be a major asset in helping you make progress towards what you want. However, make sure to stay grounded and practical in your approach, and avoid being overly impulsive or reckless. It's important to balance your enthusiasm with careful planning and attention to detail. Keep an open mind and be flexible in your thinking, as unexpected opportunities may arise that could lead to exciting new possibilities. Trust your instincts and believe in yourself, and you will be well on your way to success."
+      },
+      "04-17-2023": {
+        "description": "For Leo, the week of April 17th, 2023, could bring some unexpected surprises and opportunities. This could be a good time to take some risks and try something new, as long as you approach things with a clear head and solid plan. You may also find that your creative energy is heightened, making this a great time to express yourself in new and exciting ways. Be sure to stay focused and prioritize your goals, as distractions could lead you off course. It's important to balance your personal and professional life, and make time for both rest and play to maintain your energy and focus. Overall, this could be a dynamic and transformative week for you, so embrace the changes and challenges that come your way."
+      }
+    },
+    "Virgo": {
+      "03-27-2023": {
+        "description": "For Virgo, the week of March 27th, 2023, is likely to bring opportunities for personal growth and development. You may find yourself feeling more introspective than usual, and this could be a good time to reflect on your goals and priorities. It's important to take care of yourself during this time and make time for self-care activities. Additionally, you may find that your intuition is heightened, and you have a better sense of what you want and need in your life. Trust your instincts and take steps to align your actions with your values. This could be a transformative time if you're open to it."
+      },
+      "04-03-2023": {
+        "description": "The week of April 3rd, 2023, could be a busy and productive one for you, Virgo. You may find yourself juggling multiple tasks and responsibilities, but your attention to detail and organizational skills will help you stay on top of everything. This could be a good time for you to prioritize your goals and focus on the things that truly matter to you. You may also benefit from seeking out new information and learning opportunities that can help you expand your skillset and knowledge base. However, be sure to take breaks and practice self-care to avoid burning out."
+      },
+      "04-10-2023": {
+        "description": "In your personal life, you may be feeling more inclined towards solitude and introspection. This is a great time to reflect on your values and priorities, and perhaps make some changes or adjustments. Don't be afraid to take time for yourself and do what feels most authentic and true to you."
+      },
+      "04-17-2023": {
+        "description": "For the week of April 17th, 2023, Virgo, you may find yourself feeling more energized and motivated to tackle new projects or tasks. This could be a good time to set new goals and make plans for the future. However, be sure to balance this drive with self-care and taking time to recharge when needed. Communication and networking could also be emphasized during this time, so don't be afraid to reach out to others for support or collaboration. Overall, this week presents opportunities for growth and progress, as long as you stay focused and take care of yourself along the way."
+      }
+    },
+    "Libra": {
+      "03-27-2023": {
+        "description": "For the week of March 27th, 2023, Libra, you may feel a strong desire to explore your creative side. This could be a great time to start a new artistic project or try a new hobby that you've been curious about. You may also feel a sense of restlessness and a desire for change in your daily routine. This could be a good time to shake things up and try a new approach to your work or daily responsibilities. Trust your intuition and don't be afraid to take some risks. Your positive energy and creativity will attract opportunities for growth and success."
+      },
+      "04-03-2023": {
+        "description": "For Libra, the week of April 3rd, 2023, may bring some unexpected challenges that require quick thinking and adaptability. You may encounter some resistance or opposition from others, so it's important to stay grounded and assertive in your communication. However, this week also presents opportunities for growth and innovation in your personal and professional life. Keep an open mind and be willing to take calculated risks. Remember to prioritize self-care and maintain a healthy balance between work and rest."
+      },
+      "04-10-2023": {
+        "description": "This could be a good time to work on projects that require teamwork or collaboration, as your ability to work well with others is likely to be strong. You may also find that you're able to resolve any conflicts or issues that may have arisen in your personal or professional relationships."
+      },
+      "04-17-2023": {
+        "description": "Overall, the week of April 17th, 2023, is a time for you to focus on your passions and social connections while maintaining a balanced approach to your finances and career. Stay optimistic, and trust that everything will work out for the best."
+      }
+    },
+    "Scorpio": {
+      "03-27-2023": {
+        "description": "This week, Scorpios may feel like they are being pulled in different directions, as there may be conflicting demands on their time and attention. However, it's important to prioritize and focus on the tasks that are most important and will have the biggest impact on their goals. The key is to stay organized and maintain a clear sense of purpose. This is also a good time to tap into your intuition and trust your instincts when making decisions. Remember to take breaks and make time for self-care to avoid feeling overwhelmed."
+      },
+      "04-03-2023": {
+        "description": "It's important to stay grounded and maintain a sense of balance during this time. Take time to reflect on your values and priorities, and make decisions that align with them. Trust your instincts and intuition, but also seek advice and support from trusted friends and colleagues."
+      },
+      "04-10-2023": {
+        "description": "For Scorpio, the week of April 10th, 2023, may bring some challenges related to communication and relationships. You may need to be careful with your words and avoid any misunderstandings, especially with loved ones. It's a good time to listen more than speak and be open to other people's perspectives."
+      },
+      "04-17-2023": {
+        "description": "During the week of April 17th, 2023, Scorpios may find themselves facing some unexpected challenges. It's important to remain calm and composed, and not to let these challenges throw you off course. Keep a clear head and focus on your goals, and trust that you have the inner strength and resources to overcome any obstacles that come your way. This is also a good time to prioritize self-care and take time for rest and relaxation when needed. Don't hesitate to reach out to loved ones for support and guidance if you need it."
+      }
+    },
+    "Sagittarius": {
+      "03-27-2023": {
+        "description": "Sagittarius, this week is all about creativity and self-expression. Tap into your creativity and express yourself in new ways. Be confident and assertive, and take charge of your life. Be flexible and adaptable, and make a budget and save money."
+      },
+      "04-03-2023": {
+        "description": "Sagittarius, this week is all about communication and relationships. Be confident and assertive in your interactions with others. This is a good time to connect with friends and family, and to share your ideas. Be mindful of your thoughts and feelings, and be patient and persistent in your endeavors."
+      },
+      "04-10-2023": {
+        "description": "Sagittarius, this week is all about communication and relationships. Be confident and assertive, and share your ideas. Take risks and try new things, but be patient and persistent. Break free from the mold and try new things, but be mindful of your thoughts and feelings."
+      },
+      "04-17-2023": {
+        "description": "Sagittarius, this week is all about taking risks and trying new things. Be confident and adventurous, and step outside of your comfort zone. Be mindful of your thoughts and feelings, and make sure you are doing what is right for you. Connect with your inner self and tap into your intuition, and let your heart guide you."
+      }
+    },
+    "Capricorn": {
+      "03-27-2023": {
+        "description": "In terms of work and finances, this week may be a bit of a mixed bag. While there may be some unexpected expenses or setbacks, you may also have the chance to take on new projects or explore new opportunities that could lead to long-term success."
+      },
+      "04-03-2023": {
+        "description": "In your relationships, be open and honest with your loved ones about your goals and aspirations. Your passion and drive can be contagious, and your loved ones may be inspired to pursue their own goals as well. Embrace this opportunity to connect with others on a deeper level and strengthen your bonds."
+      },
+      "04-10-2023": {
+        "description": "Overall, this week may require you to put in some extra effort, but it will be worth it in the long run. Stay grounded and keep your eye on your goals, and you will achieve success."
+      },
+      "04-17-2023": {
+        "description": "For Capricorn, the week of April 17th, 2023, indicates a period of mixed emotions. On the one hand, you may experience some tension or conflict in your personal relationships, particularly with family members or close friends. This may require you to practice patience and diplomacy to navigate through any disagreements. On the other hand, this week presents an excellent opportunity for you to focus on your career goals and make significant progress towards achieving them. You may receive recognition or praise for your hard work, which can boost your confidence and motivate you to continue striving for success."
+      }
+    },
+    "Aquarius": {
+      "03-27-2023": {
+        "description": "Overall, this week may not be the most action-packed or exciting, but it can be a valuable time for inner growth and reflection. Use this time wisely and trust that the insights and realizations you have during this time will serve you well in the future."
+      },
+      "04-03-2023": {
+        "description": "Be careful not to become too impulsive or reckless in your actions. Take calculated risks and think things through before making any major decisions. Make sure to balance your desire for new experiences with your need for stability and security. Overall, this is a good time for growth and progress, as long as you stay grounded and focused."
+      },
+      "04-10-2023": {
+        "description": "Professionally, you may receive some positive feedback or recognition for your hard work and dedication. This could also lead to new opportunities for career advancement or networking with influential people in your field."
+      },
+      "04-17-2023": {
+        "description": "For the week of April 17th, 2023, Aquarius, you may find that you are feeling particularly creative and inspired. This can be a great time to explore your creative side, whether through writing, art, or other forms of expression. You may also find that you have an easier time connecting with others and building new relationships, as your charisma and charm are especially high right now."
+      }
+    },
+    "Pisces": {
+      "03-27-2023": {
+        "description": "This week may bring some unexpected events and surprises for you, Pisces. It is important to stay alert and adaptable to handle any changes that come your way. You may receive good news related to your career or finances, which could boost your confidence and motivation. However, you may also face some challenges in your personal relationships that require you to communicate clearly and openly. Remember to take care of your health and well-being, both physically and mentally, to stay grounded and centered amidst any changes or stressors. Trust your intuition and stay positive, as this can help you navigate any obstacles with grace and ease."
+      },
+      "04-03-2023": {
+        "description": "For Pisces, the week of April 3rd, 2023, is likely to be filled with unexpected events and surprises. You may find yourself dealing with some unexpected challenges, which could be stressful and emotionally taxing. However, if you stay calm and focused, you will be able to overcome these challenges and emerge stronger."
+      },
+      "04-10-2023": {
+        "description": "On the social front, you may feel more withdrawn than usual, and may not have as much energy for socializing as you normally do. This is okay - it's important to honor your own needs and boundaries. That said, you may find that spending time with close friends or loved ones helps you to feel more grounded and supported."
+      },
+      "04-17-2023": {
+        "description": "Overall, the key for Pisces this week is to stay focused on your goals and priorities, while also making time for the important relationships in your life. With a balanced approach, you can make progress in all areas of your life and feel fulfilled and content."
+      }
+    }
   }
 }
