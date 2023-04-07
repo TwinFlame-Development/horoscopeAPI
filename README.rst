@@ -198,14 +198,29 @@ The API returns the following JSON response (example):
 .. code-block:: json
 
     {
-      "current_date": "04-01-2023",
+      "current_date": "04-07-2023",
       "compatibility": "Scorpio",
-      "lucky_time": "15:30",
-      "lucky_number": "61",
-      "mood": "Relaxed",
-      "color": "Turquoise",
-      "description": "Saturday, April 1st, 2023 (Moon in Leo): Scorpio, today you may feel a need for self-expression and creativity. You may want to showcase your unique talents and abilities. Use this energy to express yourself authentically and confidently. Some past events that occurred on this day include the founding of the city of Baghdad by the Abbasid caliph Al-Mansur. This event could be relevant to Scorpios as they may be seeking to establish a new cultural or intellectual center in their own lives."
+      "lucky_time": "16:30",
+      "lucky_number": "65",
+      "mood": "Neutral",
+      "color": "Burgundy",
+      "description": "Friday, April 7th, 2023: Scorpios may feel a bit emotionally sensitive today. Take time for self-care and prioritize your own needs. On this day in 1994, the genocide in Rwanda began, reminding us of the importance of empathy and understanding towards others."
     }
+
+With the 'nodate' option, the API returns the following JSON response (example):
+
+.. code-block:: json
+
+    {
+      "current_date": "04-07-2023",
+      "compatibility": "Scorpio",
+      "lucky_time": "16:30",
+      "lucky_number": "65",
+      "mood": "Neutral",
+      "color": "Burgundy",
+      "description": "Scorpios may feel a bit emotionally sensitive today. Take time for self-care and prioritize your own needs. On this day in 1994, the genocide in Rwanda began, reminding us of the importance of empathy and understanding towards others."
+    }
+
 
 If the ‘range’ request parameter is present, the API returns the following JSON response (example):
 
