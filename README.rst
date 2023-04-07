@@ -222,6 +222,15 @@ With the 'nodate' option, the API returns the following JSON response (example):
     }
 
 
+With the 'this_week' date (requesting a weekly horoscope), the API returns the following JSON response (example):
+
+.. code-block:: json
+
+   {
+       "current_date": "04-03-2023",
+       "description": "Gemini individuals may find that communication is key during this week, as their natural talent for networking and connecting with others may be highlighted. This may be a good time to focus on strengthening relationships with loved ones and colleagues, as well as networking with new acquaintances. However, it may also be important to balance social activities with alone time to recharge and reflect."
+   }
+
 If the ‘range’ request parameter is present, the API returns the following JSON response (example):
 
 .. code-block:: json
