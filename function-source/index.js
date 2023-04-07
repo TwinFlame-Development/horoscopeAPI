@@ -6,6 +6,8 @@
 ** https://github.com/TwinFlame-Development/horoscopeAPI
 */
 
+const moment = require('moment');
+
 // Usage logging:
 async function quotaManager(token, name) {
     console.log(`Logging API cal from -> ${name}!`);
@@ -56,7 +58,8 @@ exports.horoscopeAPIprod = async (req, res) => {
     let sign = req.query.sign;
     let token = req.query.token;
     let range = req.query.range;
-
+    let noDate = req.query.nodate;
+    
     //check token:
     if (token === null) {
         let badToken = '401 - Unauthorized -> Token is null: ' + token;
@@ -209,6 +212,70 @@ exports.horoscopeAPIprod = async (req, res) => {
                 date = tmformattedDateString;
                 console.info('Requested TOMORROW so using date -> ' + date);
                 break;
+            case "this_week":
+            case "next_week":
+            case "last_week":
+                console.info('Requested weekly horoscope so using -> ' + date);
+
+                //format the Sign
+                let searchSign = sign.toLowerCase();
+                searchSign = searchSign.charAt(0).toUpperCase() + searchSign.slice(1);
+
+                // check for valid sign:
+                const zodiacSigns = ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"];
+
+                if (zodiacSigns.includes(searchSign)) {
+                    //valid
+                    let weeklyDateFormatted = ''
+                    switch (date) {
+                        case "this_week":
+                            // get Monday of current week
+                            const monday = moment().locale('en-gb').startOf('week');
+                            
+                            // format Monday as "mm-dd-yyyy"
+                            weeklyDateFormatted = monday.format('MM-DD-YYYY');
+                            break;
+                        case "next_week":
+                            // get Monday of next week
+                            const mondayNextWeek = moment().locale('en-gb').add(1, 'weeks').startOf('week');
+
+                            // format Monday as "mm-dd-yyyy"
+                            weeklyDateFormatted = mondayNextWeek.format('MM-DD-YYYY');
+                            break;
+                        case "last_week":
+                            // get Monday of last week
+                            const mondayLastWeek = moment().locale('en-gb').subtract(1, 'weeks').startOf('week');
+
+                            // format Monday as "mm-dd-yyyy"
+                            weeklyDateFormatted = mondayLastWeek.format('MM-DD-YYYY');
+                            break;
+                        default:
+                            break;   
+                    }
+                    
+                    let description = horoscopeJSON["weekly"][searchSign][weeklyDateFormatted]["description"];
+                            
+                    console.info('200 - Success -> Token : ' + token + ' -> Weekly horoscope for - ', weeklyDateFormatted); 
+
+                    res.status(200).json({
+                        'current_date': weeklyDateFormatted,
+                        'description': description
+                    });    
+                    return;
+                } else if (searchSign == 'All') {
+                    //call for all of the signs for the requested date:
+                    console.info('400 Bad Request - Invalid Zodiac Sign for Weekly -> ' + searchSign);
+                    res.status(400).send('Bad Request - Invalid sign provided');
+                    return;
+
+                } else {
+                    //not a valid sign:
+                    console.info('400 Bad Request - Invalid Zodiac Sign -> ' + searchSign);
+                    res.status(400).send('Bad Request - Invalid sign provided');
+                    return;
+                }
+
+                return;  
             default:
                 console.info('400 Bad Request - Invalid date string -> ' + date);
                 res.status(400).send('Bad Request - Invalide date provided');
@@ -289,6 +356,19 @@ exports.horoscopeAPIprod = async (req, res) => {
     let description = horoscopeJSON[searchSign][date]["description"];
     let color = horoscopeJSON[searchSign][date]["color"];
 
+    //strip the date from the description if requested:
+    if (!!noDate) {
+        // Regex to match the date format with either '-' or ':' as the separator
+        // Modify to filter your hosted content as appropriate:
+        const regex = /(^([A-Za-z]+,\s)?[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}:\s)|(\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}[ :\-]*\s*\-\s*|[A-Z][a-z]+day,\s|^[A-Za-z]+\s\d{1,2}[a-z]{0,2},\s\d{4}\s\([A-Za-z]+\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\b\s\([A-Za-z]+\):\s)/g;
+
+        // Replace the date portion with an empty string
+        description = description.replace(regex, '');
+
+        console.info('NODATE requested, modifed description is ->' + description);
+
+    }
+    
     let goodToken = '200 - Success -> Token : ' + token + ' -> for ' + searchSign + ' on '  + date;
     console.info(goodToken);
 
