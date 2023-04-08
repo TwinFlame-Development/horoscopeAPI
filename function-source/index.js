@@ -128,8 +128,8 @@ exports.horoscopeAPIprod = async (req, res) => {
         console.info(goodToken);
 
         res.status(200).json({
-            'earliest_date': lowestDate.toLocaleDateString('en-US'),
-            'latest_date': highestDate.toLocaleDateString('en-US')
+            'earliest_date': lowestDate.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'}),
+            'latest_date': highestDate.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'})
           });
     
         return
@@ -360,7 +360,7 @@ exports.horoscopeAPIprod = async (req, res) => {
     if (!!noDate) {
         // Regex to match the date format with either '-' or ':' as the separator
         // Modify to filter your hosted content as appropriate:
-        const regex = /(^([A-Za-z]+,\s)?[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}:\s)|(\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}[ :\-]*\s*\-\s*|[A-Z][a-z]+day,\s|^[A-Za-z]+\s\d{1,2}[a-z]{0,2},\s\d{4}\s\([A-Za-z]+\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\b\s\([A-Za-z]+\):\s)/g;
+        const regex = /((^([A-Za-z]+,\s)?[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}:\s)|(\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}[ :\-]*\s*\-\s*|[A-Z][a-z]+day,\s|^[A-Za-z]+\s\d{1,2}[a-z]{0,2},\s\d{4}\s\([A-Za-z]+\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\b\s\([A-Za-z]+\):\s))|\b[A-Za-z]+\s\d{1,2}(?:th|st|nd|rd)?\s\([^)]*\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\s\([^)]*\):\s/g;
 
         // Replace the date portion with an empty string
         description = description.replace(regex, '');
