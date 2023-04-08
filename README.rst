@@ -246,8 +246,8 @@ If the ‘range’ request parameter is present, the API returns the following J
 .. code-block:: json
 
     {
-      "earliest_date": "3/27/2023",
-      "latest_date": "4/16/2023"
+      "earliest_date": "03/27/2023",
+      "latest_date": "04/16/2023"
     }
 
 Projects using the TwinFlame Horoscope API
