@@ -3,7 +3,17 @@
 TwinFlame - The Horoscope API 
 #################################
  This API provides horoscope information for the given date and zodiac sign. It requires a valid token to access the API. If the token is invalid or has expired, the API returns an unauthorized response.
+ 
+ .. image:: https://img.shields.io/github/v/release/TwinFlame-Development/horoscopeAPI
+   :alt: GitHub release (latest by date)
+ .. image:: https://img.shields.io/github/languages/top/TwinFlame-Development/horoscopeAPI
+   :alt: GitHub top language
+ .. image:: https://img.shields.io/github/languages/code-size/TwinFlame-Development/horoscopeAPI
+   :alt: GitHub code size in bytes
+ .. image:: https://img.shields.io/github/stars/TwinFlame-Development/horoscopeAPI
+   :alt: GitHub Repo stars
      
+ 
 .. image:: https://firebasestorage.googleapis.com/v0/b/twinflame.appspot.com/o/github%2FTFhoroscopeAPIbanner.png?alt=media&token=7289276f-e1b7-46f3-8537-1962bd64c519
    :height: 412px
    :width: 898px
