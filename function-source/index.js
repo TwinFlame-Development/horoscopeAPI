@@ -356,18 +356,75 @@ exports.horoscopeAPIprod = async (req, res) => {
     let description = horoscopeJSON[searchSign][date]["description"];
     let color = horoscopeJSON[searchSign][date]["color"];
 
-    //strip the date from the description if requested:
-    if (!!noDate) {
-        // Regex to match the date format with either '-' or ':' as the separator
-        // Modify to filter your hosted content as appropriate:
-        const regex = /((^([A-Za-z]+,\s)?[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}:\s)|(\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}[ :\-]*\s*\-\s*|[A-Z][a-z]+day,\s|^[A-Za-z]+\s\d{1,2}[a-z]{0,2},\s\d{4}\s\([A-Za-z]+\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\b\s\([A-Za-z]+\):\s))|\b[A-Za-z]+\s\d{1,2}(?:th|st|nd|rd)?\s\([^)]*\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\s\([^)]*\):\s/g;
+    /*
+        Following are some example data scrubbers.  
+        They can be modified based on the content you serve to provide different versions of output on the return
+        In our use-case, we provide the ability to:
+        - strip the date prefix from the horoscope
+        - strip a historical reference from the horoscope
+        - strip both (a short horoscope)
+    */
+
+    // Regex to match and remove various date formats and timestamps from a string
+    const stripDateRegex = /((^([A-Za-z]+,\s)?[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}:\s)|(\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}[ :\-]*\s*\-\s*|[A-Z][a-z]+day,\s|^[A-Za-z]+\s\d{1,2}[a-z]{0,2},\s\d{4}\s\([A-Za-z]+\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\b\s\([A-Za-z]+\):\s))|\b[A-Za-z]+\s\d{1,2}(?:th|st|nd|rd)?\s\([^)]*\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\s\([^)]*\):\s/g;
+   
+    // Regex to strip historical event references from the horoscope:
+    const stripEventRegex = /((?:^|[.?!])\s*|(?:In\s+((?:the\s+)?past|the\s+)?|On\s+this\s+day\s*,?\s*)|(?:This|Today)\s+day\s+in\s+)\d{4}\s*,?\s*.*?$/i;
+   
+    // Regex to strip any incomplete sentences from the horoscope after removing the historical event:
+    const incompleteSentenceRegex = /(?<=\.|\?|\!)\s*[^\.\?!]+[^\.\?!]*$/s;
+    
+    if (!!shorthoro) {
+        //user wants a shoter horoscope; strip date prefix & historical event references:
 
         // Replace the date portion with an empty string
-        description = description.replace(regex, '');
+        // Replace the event reference portion with an empty string
+        // Replace any incomplete sentences:
 
-        console.info('NODATE requested, modifed description is ->' + description);
+        description = description.replace(stripDateRegex, '')
+                         .replace(stripEventRegex, '$1')
+                         .replace(incompleteSentenceRegex, '');
 
-    }
+        console.info('SHORTHORO requested, modifed description is ->' + description);
+    } else {
+        //check for unique date or event scrubbing:
+        if (!!noDate) {
+            //strip the date from the description if requested:
+            let result = description.match(stripDateRegex);
+            if (result) {
+                result = result[0];
+            } else {
+                result = 'No matches found.';
+            };
+            // Replace the date portion with an empty string
+            description = description.replace(stripDateRegex, '');
+
+            console.info('NODATE requested, matched -> ' + result);
+            console.info('NODATE requested, modifed description is ->' + description);
+        };
+    
+        if (!!noHistory) {
+            // Remove the event reference portion and incomplete sentences
+            const resultEvent = description.match(stripEventRegex);
+            if (resultEvent) {
+                console.info('NOHISTORY requested, event matched -> ' + resultEvent[0]);
+            } else {
+                console.info('NOHISTORY requested, event matched -> No matches found.');
+            };
+            description = description.replace(stripEventRegex, '');
+            // Remove incomplete sentences that may be left around after the preceeding REGEX
+            const incompleteEvent = description.match(incompleteSentenceRegex);
+            if (incompleteEvent) {
+                console.info('NOHISTORY requested, incompleteSentenceRegex matched -> ' + incompleteEvent[0]);
+            } else {
+                console.info('NOHISTORY requested, incompleteSentenceRegex matched -> No matches found.');
+            };
+            description = description.replace(incompleteSentenceRegex, '');
+
+            console.info('NOHISTORY requested, modifed description is ->' + description);
+        };
+
+    };
     
     let goodToken = '200 - Success -> Token : ' + token + ' -> for ' + searchSign + ' on '  + date;
     console.info(goodToken);
