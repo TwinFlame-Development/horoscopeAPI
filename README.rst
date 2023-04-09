@@ -103,14 +103,38 @@ The API requires the following query parameters:
       <td>No</td>
       <td>An optional parameter that, when present, returns the earliest and latest dates for which horoscope information is available.</td>
     </tr>
+   
+    </table>
+
+The API supports optional data scrubbers that change the format of the returned horoscope:
+
+.. raw:: html
+
+   <table> 
+    <tr>
+      <th>Parameter</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
     <tr>
       <td>‘nodate’</td>
       <td>No</td>
       <td>An optional parameter that, when present, invokes a data scrubber on the returned description. We use the scrubber in our hosted solution to strip the horoscopes of the leading date qualifer.</td>
     </tr>
+    <tr>
+      <td>‘nohistory’</td>
+      <td>No</td>
+      <td>An optional parameter that, when present, invokes a data scrubber on the returned description. We use the scrubber in our hosted solution to strip the horoscopes of the historical event reference(s).</td>
+    </tr>
+    <tr>
+      <td>‘shorthoro’</td>
+      <td>No</td>
+      <td>An optional parameter that, when present, invokes a data scrubber on the returned description. We use the scrubber in our hosted solution to return a short horoscope, with no leading date qualifer and no historical reference(s).</td>
+    </tr>
    
-    
     </table>
+
+Note: data scrubbers are implemented on daily horoscope calls for a single sign (not 'all', and not on weekly horoscopes).
 
 Response Parameters
 ==========
