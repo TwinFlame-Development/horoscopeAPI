@@ -60,6 +60,14 @@ exports.horoscopeAPIprod = async (req, res) => {
     let range = req.query.range;
     let noDate = req.query.nodate;
     
+    //check that parameters are not sent more than once:
+    if (Array.isArray(sign) || Array.isArray(date) || Array.isArray(token)) {
+        let badSign = '400 Bad Request - sign is null!';
+        console.info('400 Bad Request - Duplicate parameters!');
+        res.status(400).send('Bad Request - Duplicate parameters provided');
+        return;
+    } 
+    
     //check token:
     if (token === null) {
         let badToken = '401 - Unauthorized -> Token is null: ' + token;
