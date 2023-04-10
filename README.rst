@@ -70,6 +70,8 @@ Note: Query the test endpoint with the ``range`` parameter to understand what te
 
 Please contact us if you're interested in a trial production token at partnerships@twinflamedev.com
 
+Some usage examples are here:
+`TwinFlame Horoscope API test endpoint usage examples <https://github.com/TwinFlame-Development/horoscopeAPI/tree/main/examples>`_.
 
 Request Parameters
 ==========
