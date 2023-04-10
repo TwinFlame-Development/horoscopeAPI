@@ -51,23 +51,34 @@ cURL
 ^^^^
 .. code-block:: python
 
-    curl -X POST \
-    'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?token=mmEUtLATc8w_UNnHuR2&sign=scorpio&date=04-01-2023'
+    curl 'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?sign=scorpio&day=04-01-2023&token=mmEUtLATc8w_UNnHuR2'
+
 
 
 Python
 ^^^^^^
 .. code-block:: python
 
-    import requests
+   import requests
+   import json
 
-    params = (
-      ('sign', 'scorpio'),
-      ('day', '04-01-2023'),
-      ('token', 'mmEUtLATc8w_UNnHuR2')
-    )
+   def tfhoro(sign, day, token):
+       url = 'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test'
+       params = {
+           'sign': sign,
+           'day': day,
+           'token': token
+       }
+       response = requests.get(url, params=params)
+       if response.status_code == 200:
+           responseData = json.loads(response.content)
+           return responseData
+       else:
+           print('Error: HTTP %d' % response.status_code)
 
-    requests.post('https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test', params=params)
+   ObjData = tfhoro('scorpio', '04-01-2023', 'mmEUtLATc8w_UNnHuR2')
+   print(ObjData)
+
 
 
 
@@ -96,27 +107,16 @@ PHP
 
     <?php
 
-        //This function can be used in a PHP framework.
+      function tfhoro($sign, $day, $token) {
+         $url = 'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?sign='.$sign.'&day='.$day.'&token='.$token;
+         $response = file_get_contents($url);
+         $responseData = json_decode($response, TRUE);
+         return $responseData;
+       }
 
-        function tfhoro($sign, $day, $token) {
-            $tfhoro = curl_init('https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?sign='.$sign.'&day='.$day.'&token='.$token);
-            curl_setopt_array($tfhoro, array(
-                CURLOPT_POST => TRUE,
-                CURLOPT_RETURNTRANSFER => TRUE,
-                CURLOPT_HTTPHEADER => array(
-                    'Content-Type: application/json'
-                )
-            ));
-            $response = curl_exec($tfhoro);
-            if($response === FALSE){
-                die(curl_error($tfhoro));
-            }
-            $responseData = json_decode($response, TRUE);
-            return $responseData;
-        }
+      $ObjData = tfhoro('scorpio', '04-01-2023', 'mmEUtLATc8w_UNnHuR2');
+      var_dump($ObjData);
 
-        $ObjData = tfhoro('scorpio', '04-01-2023', 'mmEUtLATc8w_UNnHuR2');
-        var_dump($ObjData);
 
     ?>
   
@@ -124,12 +124,26 @@ jQuery Ajax
 ^^^^^^
 .. code-block:: javascript
 
-    $.ajax({
-      type:'GET',
-      url:'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?sign=aries&day=today&token=mmEUtLATc8w_UNnHuR2',
-      success:function(data){
-      console.log(data);
-      }
-    });
+ function tfhoro(sign, day, token) {
+  return $.ajax({
+    url: 'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test',
+    method: 'GET',
+    data: {
+      sign: sign,
+      day: day,
+      token: token
+    },
+    dataType: 'json'
+  });
+ }
+
+ tfhoro('scorpio', '04-01-2023', 'mmEUtLATc8w_UNnHuR2')
+  .done(function(responseData) {
+    console.log(responseData);
+  })
+  .fail(function(jqXHR, textStatus, errorThrown) {
+    console.error(errorThrown);
+  });
+
 
 
