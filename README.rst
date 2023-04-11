@@ -39,7 +39,11 @@ This API is used to provide the daily horoscopes used by TwinFlame’s Android a
 
 Do you offer a subscription Horoscope API?
 ==============
-Yes -> The TwinFlame Horoscope API subscription allows developers to access and integrate TwinFlame’s daily horoscopes with other applications. The API retrieves daily (or weekly) horoscopes for a specific date.  The API has a rolling set of daily horoscopes.  The available date range varies, but in general the current date +/- 7 days is available in the API.
+Yes! 
+
+Are you a developer looking to add personalized horoscopes to your app or website? The TwinFlame Horoscope API subscription is the perfect solution. Our API provides daily and weekly horoscopes for all zodiac signs, so your users can get the insights they need to make the most of each day!
+
+The API retrieves daily (or weekly) horoscopes for a specific date.  The API has a rolling set of daily horoscopes.  The available date range varies, but in general the current date +/- 7 days is available in the API.
 
 Subscription service horoscopes are written and reviewed by TwinFlame’s in-house astrologers and the content is copyrighted by TwinFlame Development, LLC.  Subscription to the API allows you license to use the horoscopes in your applications.
 
