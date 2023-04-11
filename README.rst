@@ -29,7 +29,7 @@ This API provides horoscope information for the given date and zodiac sign. It r
 
 The TwinFlame Horoscope API is for a developer who wants an API that provides horoscope info for zodiac signs for a recent day.  The primary use-case of the API is to display daily or weekly horoscopes in an application.
 
-Feel free to contribute on `Github <https://github.com/TwinFlame-Development/horoscopeAPI>`_.
+Feel free to contribute on `GitHub <https://github.com/TwinFlame-Development/horoscopeAPI>`_.
 
 Why TwinFlame?
 ==========
