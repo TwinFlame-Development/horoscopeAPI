@@ -101,6 +101,36 @@ Node.js
 
     request(options, callback);
 
+Wix Velo
+^^^^^^^
+
+.. code-block:: javascript
+
+   import {fetch} from 'wix-fetch';
+
+   function getJsonData(token, date, sign) {
+       const url = `https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test?token=${token}&date=${date}&sign=${sign}`;
+       return fetch(url)
+           .then(response => response.json())
+           .then(jsonData => {
+               console.log(jsonData);
+               return jsonData;
+           })
+           .catch(err => {
+               console.error('Error fetching JSON data:', err);
+           });
+   }
+
+   getJsonData('mmEUtLATc8w_UNnHuR2', '04-01-2023', 'scorpio')
+       .then(jsonData => {
+           console.log(jsonData);
+           // Do something with the jsonData object here
+       })
+       .catch(err => {
+           console.error('Error getting JSON data:', err);
+       });
+
+
 PHP
 ^^^
 .. code-block:: php
