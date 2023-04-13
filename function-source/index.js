@@ -27,7 +27,7 @@ exports.horoscopeAPIprod = async (req, res) => {
 
     if (req.method === 'OPTIONS') {
         // Send response to OPTIONS requests
-        res.set('Access-Control-Allow-Methods', 'GET');
+        res.set('Access-Control-Allow-Methods', 'GET, POST');
         res.set('Access-Control-Allow-Headers', 'Content-Type');
         res.set('Access-Control-Max-Age', '3600');
         res.status(204).send('');
@@ -54,11 +54,20 @@ exports.horoscopeAPIprod = async (req, res) => {
     const tokenJSONStr = JSON.stringify(tokenData);
     const tokenJSON = JSON.parse(tokenJSONStr);
     
-    let date = req.query.date;
-    let sign = req.query.sign;
-    let token = req.query.token;
-    let range = req.query.range;
-    let noDate = req.query.nodate;
+    console.info('Received request -> ' + req.method);
+
+    // Retrieve the date and sign parameters from the query string or request body
+    let date = typeof req.query.date !== 'undefined' ? req.query.date : req.body.date;
+    let sign = typeof req.query.sign !== 'undefined' ? req.query.sign : req.body.sign;
+
+    // Retrieve the authentication token from the query string, request body, or headers
+    let token = req.query.token || req.body.token || req.headers['x-auth-token'] || (req.headers['authorization'] && req.headers['authorization'].split(' ')[1]);
+    
+    // Retrieve the range, noDate, noHistory, and shorthoro parameters from the query string or request body
+    let range = typeof req.query.range !== 'undefined' ? req.query.range : req.body.range;
+    let noDate = typeof req.query.nodate !== 'undefined' ? req.query.nodate : req.body.nodate;
+    let noHistory = typeof req.query.nohistory !== 'undefined' ? req.query.nohistory : req.body.nohistory;
+    let shorthoro = typeof req.query.shorthoro !== 'undefined' ? req.query.shorthoro : req.body.shorthoro;
     
     //check that parameters are not sent more than once:
     if (Array.isArray(sign) || Array.isArray(date) || Array.isArray(token)) {
