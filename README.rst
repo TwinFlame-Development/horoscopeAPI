@@ -61,7 +61,7 @@ A hosted test endpoint is available:
       <th>URL</th>
     </tr>
     <tr>
-      <td>GET</td>
+      <td>GET or POST</td>
       <td>https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test</td>
     </tr>
      
@@ -77,9 +77,53 @@ Please contact us if you're interested in a trial production token at partnershi
 Some usage examples are here:
 `TwinFlame Horoscope API test endpoint usage examples <https://github.com/TwinFlame-Development/horoscopeAPI/tree/main/examples>`_.
 
+Authorization
+==========
+The TwinFlame Horoscope API uses authentication tokens for authorization.
+
+The 'token' variable is set to the value of the 'token' query parameter, the 'token' field in the request body (JSON), or the 'x-auth-token' or 'authorization' headers.
+
+.. role:: purple
+   :color: #800080
+   
+.. raw:: html
+
+   <table> 
+    <tr>
+      <th>Parameter</th>
+      <th>Location</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>‘Bearer Token’ (recommended)</td>
+      <td>HTTP Authorization header </td>
+      <td>String</td>
+      <td>The authentication token to access the API.</td>
+    </tr>
+    <tr>
+      <td>‘x-auth-token’</td>
+      <td>HTTP header </td>
+      <td>String</td>
+      <td>The authentication token to access the API.</td>
+    </tr>
+    <tr>
+      <td>‘token’</td>
+      <td>URL Query String or Body</td>
+      <td>String</td>
+      <td>The authentication token to access the API.</td>
+    </tr>
+    </table>
+
+Note:
+Remember that your authentication token is a secret! Do not share it with others or expose it in any client-side code (browsers, apps). Production requests must be routed through your own backend server where your API key can be securely loaded from an environment variable or key management service.
+
+
 Request Parameters
 ==========
-The API requires the following query parameters:
+The Horoscope API accepts each input parameter set to either a query parameter or a field in the request body (JSON).
+
+The API accepts the following parameters:
 
 .. raw:: html
 
@@ -98,11 +142,6 @@ The API requires the following query parameters:
       <td>‘sign’</td>
       <td>Yes</td>
       <td>The zodiac sign for which to retrieve the horoscope information. The sign should be in lowercase. Alternatively this can be 'all' to return all sign horoscopes for a given date.</td>
-    </tr>
-    <tr>
-      <td>‘token’</td>
-      <td>Yes</td>
-      <td>The authentication token to access the API.</td>
     </tr>
     <tr>
       <td>‘range’</td>
