@@ -20,7 +20,7 @@ async function quotaManager(token, name) {
 exports.horoscopeAPIprod = async (req, res) => {
 
     // Set CORS headers for preflight requests
-    // Allows GETs from any origin with the Content-Type header
+    // Allows GETs/POSTs from any origin with the Content-Type header
     // and caches preflight response for 3600s
 
     res.set('Access-Control-Allow-Origin', '*');
