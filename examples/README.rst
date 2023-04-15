@@ -94,9 +94,6 @@ Because they hate to 'reinvent-the-wheel'!
    print(ObjData)
 
 
-
-
-
 Node.js
 ^^^^^^^
 Why did the Node.js developer quit his job?
@@ -160,6 +157,37 @@ It didn't have the Velo-city she was looking for!
        .catch(err => {
            console.error('Error getting JSON data:', err);
        });
+
+WordPress HTTP API 
+^^^^^^^
+
+Why did the WordPress developer go broke? 
+
+Because she used up all her cache!
+
+.. code-block:: php
+
+      $args = array(
+          'headers' => array(
+              'Authorization' => 'Bearer mmEUtLATc8w_UNnHuR2',
+              'Content-Type' => 'application/json'
+          ),
+          'body' => json_encode(array(
+              'sign' => 'scorpio',
+              'day' => '04-01-2023'
+          ))
+      );
+
+      $response = wp_remote_post('https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test', $args);
+
+      if (is_wp_error($response)) {
+          $error_message = $response->get_error_message();
+          echo "Something went wrong: $error_message";
+      } else {
+          $body = wp_remote_retrieve_body($response);
+          echo $body;
+      }
+
 
 Swift
 ^^^^^^^
