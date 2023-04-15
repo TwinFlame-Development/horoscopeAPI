@@ -19,6 +19,34 @@ async function quotaManager(token, name) {
 
 exports.horoscopeAPIprod = async (req, res) => {
 
+    //find client IP address (this assumes forwarded request; modify for your use case):
+    const clientIP = req.headers['x-forwarded-for'] || req.ip;
+    console.info(`Received request from ${clientIP}`);
+
+    //simple white/blacklisting:
+    // Define arrays of allowed and blocked IP addresses
+    const allowedIPs = ['192.168.1.1', '10.0.0.1', '172.16.0.1'];
+    const blockedIPs = ['192.168.1.2', '10.0.0.2', '172.16.0.2'];
+
+    // Set a flag to allow all IPs on the whitelist
+    const allowAll = true;
+
+    // Check if the client IP address is in the blockedIPs array
+    if (blockedIPs.includes(clientIP)) {
+        // Deny the request
+        console.info(`403 - Address: ${clientIP} is blacklisted.`); // Log the blocked IP
+        res.status(403).send('Access denied'); // Send a 403 Forbidden response
+        return;
+    } else if (allowedIPs.includes(clientIP) || allowAll) {
+        // Allow the request
+        console.info(`Address: ${clientIP} is whitelisted.`); // Log the allowed IP
+    } else {
+        // Deny the request
+        console.log(`403 - Address: ${clientIP} is not whitelisted.`); // Log the denied IP
+        res.status(403).send('Access denied'); // Send a 403 Forbidden response
+        return;
+    }
+
     // Set CORS headers for preflight requests
     // Allows GETs/POSTs from any origin with the Content-Type header
     // and caches preflight response for 3600s
