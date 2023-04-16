@@ -344,7 +344,13 @@ Projects using the TwinFlame Horoscope API
       <td>Android</td>
       <td>TwinFlame astrology app for Android phones & tablets.</td>
     </tr>
-    
+    <tr>
+      <td>
+        <a href="https://www.twinflamedev.com/api">TwinFlame Website</a>
+      </td>
+      <td>Web</td>
+      <td>TwinFlame Development's website (API implemtation vai Wix Velo 'fetch')</td>
+    </tr>
     
     </table>
 
