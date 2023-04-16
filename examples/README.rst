@@ -2,6 +2,13 @@
 TwinFlame - The Horoscope API  
 #################################
 
+Please note that the code examples provided here are intended to serve as a starting point for your own development efforts and may need to be adapted to work within the specifics of your unique environment. 
+
+Please use these examples at your own discretion and always test thoroughly before deploying to a production environment.
+
+We recommend exercising the API using `Postman <https://www.postman.com/>`_ or a similar tool to become familiar with its functionality before implementing it in your application.
+
+
 The following examples use these parameters: 
 
 .. raw:: html
@@ -30,7 +37,7 @@ The following examples use these parameters:
    
     </table>
 
-All examples referece the hosted test endpoint:
+All examples referece the hosted test endpoint, and pass 'token' as a Bearer Token:
 
 .. raw:: html
 
@@ -40,7 +47,7 @@ All examples referece the hosted test endpoint:
       <th>URL</th>
     </tr>
     <tr>
-      <td>GET</td>
+      <td>POST</td>
       <td>https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test</td>
     </tr>
      
