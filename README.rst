@@ -14,8 +14,8 @@ TwinFlame - The Horoscope API
    :alt: GitHub Repo stars
      
  
-.. image:: https://firebasestorage.googleapis.com/v0/b/twinflame.appspot.com/o/github%2FTFhoroscopeAPIbanner.png?alt=media&token=7289276f-e1b7-46f3-8537-1962bd64c519
-   :height: 412px
+.. image:: https://firebasestorage.googleapis.com/v0/b/twinflame.appspot.com/o/github%2FhoroAPISocial.png?alt=media&token=b4b55048-d258-4b34-9a90-2d1485c9a596
+   :height: 449px
    :width: 898px
    :alt: twinflame horoscope api logo
    :align: center
