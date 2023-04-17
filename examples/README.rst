@@ -193,7 +193,7 @@ WordPress HTTP API
 Swift
 ^^^^^^^
 
- Swift programmers, the stars predict that your code will be as sleek as an iPhone today, but be careful not to get lost in the endless possibilities of the Swift language. Don't worry, though, for the power of Swift's syntax will guide you towards the path of innovation. Remember to use optionals wisely, as force-unwrapping them can cause your code to crash. May your day be as exciting as a new episode on Apple TV, and may your Swift code be as optimized as an Apple interface!
+ Swift programmers, the stars predict that your code will be as sleek as an iPhone today, but be careful not to get lost in the endless possibilities of the Swift language. Don't worry, though, for the power of Swift's syntax will guide you towards the path of innovation. Remember to use optionals wisely, as force-unwrapping them can cause your code to crash. May your day be as exciting as a new episode on Apple TV, and may your Swift code be as beautiful and user-friendly as an Apple interface!
 
 .. code-block:: swift
 
@@ -239,7 +239,7 @@ Objective-C
 
 Kotlin
 ^^^^^^^
- Kotlin programmers, the stars predict that your code will be as powerful as an Android smartphone today, but be warned of the cosmic forces that may cause issues with nullability. Don't worry, though, for the power of Kotlin's concise syntax will guide you towards the path of productivity. Remember to use safe calls, as NullPointerExceptions can cause your app to crash. May your day be as exciting as an app release on the Google Play Store, and may your Kotlin code be as elegant as the Android's design!
+ Kotlin programmers, the stars predict that your code will be as powerful as an Android smartphone today, but be warned of the cosmic forces that may cause issues with nullability. Don't worry, though, for the power of Kotlin's concise syntax will guide you towards the path of productivity. Remember to use safe calls, as NullPointerExceptions can cause your app to crash. May your day be as exciting as an app release on the Google Play, and may your Kotlin code be as elegant as the Android's design!
 
 .. code-block:: kotlin
 
