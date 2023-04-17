@@ -298,6 +298,25 @@ exports.horoscopeAPIprod = async (req, res) => {
                             break;   
                     }
                     
+                    //check range:
+                    // Parse the date string
+                    const [month, day, year] = weeklyDateFormatted.split('-');
+
+                    // Create a new Date object from the parsed values
+                    const requestedDate = new Date(year, month - 1, day);
+
+                    if (requestedDate.getTime() > highestDate.getTime()) {
+                        //newer than available horoscope range:
+                        console.info('404 - Requested weekly date newer than range -> ' + date);
+                        res.status(404).send('Not Found - date out of range');
+                        return;
+                    } else if (requestedDate.getTime() < lowestDate.getTime()) {
+                        //older than available horoscope range:
+                        console.info('404 - Requested weekly date older than range -> ' + date);
+                        res.status(404).send('Not Found - date out of range');
+                        return;
+                    }
+                    
                     let description = horoscopeJSON["weekly"][searchSign][weeklyDateFormatted]["description"];
                             
                     console.info('200 - Success -> Token : ' + token + ' -> Weekly horoscope for - ', weeklyDateFormatted); 
