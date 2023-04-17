@@ -2,7 +2,7 @@
 TwinFlame - The Horoscope API  
 #################################
 
- API programmers, the stars predict that sample code snippets will be your ally today, but be careful not to rely too heavily on their power nor syntax. Don't worry, though, for the wisdom of the API documentation will guide you towards the light. Remember to double-check the parameters, as using the wrong ones can cause unintended consequences. May your day be as productive as a successful API integration, and may your code be as reliable as a trusted sample snippet, but beware of its limitations!
+ API programmers, the stars predict that these sample code snippets will be your ally today, but be careful not to rely too heavily on their power nor syntax - ultimately, you must take charge of your own implementation. Don't worry, though, for the wisdom of the API documentation will guide you towards the light. Remember to double-check the parameters, as using the wrong ones can cause unintended consequences. May your day be as productive as a successful API integration, and may your code be as reliable as a trusted sample snippet, but beware of their limitations!
  
 Please note that the code examples provided here are intended to serve as a starting point for your own development efforts and may need to be adapted to work within the specifics of your unique environment. 
 
