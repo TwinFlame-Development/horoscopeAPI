@@ -239,7 +239,7 @@ Objective-C
 
 Kotlin
 ^^^^^^^
- Kotlin programmers, the stars predict that your code will be as powerful as an Android smartphone today, but be warned of the cosmic forces that may cause issues with nullability. Don't worry, though, for the power of Kotlin's concise syntax will guide you towards the path of productivity. Remember to use safe calls, as NullPointerExceptions can cause your app to crash. May your day be as exciting as an app release on the Google Play, and may your Kotlin code be as elegant as the Android's design!
+ Kotlin programmers, the stars predict that your code will be as powerful as an Android smartphone today, but be warned of the cosmic forces that may cause issues with nullability. Don't worry, though, for the power of Kotlin's concise syntax will guide you towards the path of productivity. Remember to use safe calls, as NullPointerExceptions can cause your app to crash. May your day be as exciting as an app release on Google Play, and may your Kotlin code be as elegant as the Android's design!
 
 .. code-block:: kotlin
 
