@@ -74,7 +74,7 @@ cURL
 
 Python
 ^^^^^^
- Python programmers, the stars predict that your code will be as clean as a freshly-shaven snake today, but beware of the sneaky whitespace bugs that may try to slither into your code. Don't worry, though, for the power of Python's syntax will guide you towards the path of enlightenment. Remember to use your virtual environments wisely, as conflicting dependencies can cause chaos. May your day be as smooth as the performance of your Python scripts!
+ Python programmers, the stars predict that your code will be as clean as a freshly-shaven snake today, but beware of the sneaky whitespace bugs that may try to slither into your code. Don't worry, though, for the power of Python's syntax will guide you towards the path of clarity. Remember to use your virtual environments wisely, as conflicting dependencies can cause chaos. May your day be as smooth as the performance of your Python scripts!
 
 .. code-block:: python
 
