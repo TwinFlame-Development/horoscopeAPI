@@ -2,12 +2,16 @@
 TwinFlame - The Horoscope API  
 #################################
 
+ API programmers, the stars predict that sample code snippets will be your ally today, but be careful not to rely too heavily on their power. Don't worry, though, for the wisdom of the API documentation will guide you towards the light. Remember to double-check the parameters, as using the wrong ones can cause unintended consequences. May your day be as productive as a successful API integration, and may your code be as reliable as a trusted sample snippet, but beware of its limitations!
+ 
 Please note that the code examples provided here are intended to serve as a starting point for your own development efforts and may need to be adapted to work within the specifics of your unique environment. 
 
 Please use these examples at your own discretion and always test thoroughly before deploying to a production environment.
 
 We recommend exercising the API using `Postman <https://www.postman.com/>`_ or a similar tool to become familiar with its functionality before implementing it in your application.
 
+.. contents:: We've put together examples/starters for:
+   :depth: 2
 
 The following examples use these parameters: 
 
@@ -56,9 +60,7 @@ All examples referece the hosted test endpoint, and pass 'token' as a Bearer Tok
 
 cURL
 ^^^^
-Why did the developer refuse to use cURL?
-
-Because she didn't want to get tangled up in the command line!
+ You're feeling creative and inspired today. This is a great time to use cURL to solve problems in new and interesting ways. You may also want to consider writing a cURL script to automate a task that you do on a regular basis.
 
 .. code-block:: python
 
@@ -72,9 +74,7 @@ Because she didn't want to get tangled up in the command line!
 
 Python
 ^^^^^^
-Why do Python programmers prefer to use their own libraries?
-
-Because they hate to 'reinvent-the-wheel'!
+ Python programmers, the stars predict that your code will be as clean as a freshly-shaven snake today, but beware of the sneaky whitespace bugs that may try to slither into your code. Don't worry, though, for the power of Python's syntax will guide you towards the path of enlightenment. Remember to use your virtual environments wisely, as conflicting dependencies can cause chaos. May your day be as smooth as the performance of your Python scripts!
 
 .. code-block:: python
 
@@ -103,9 +103,7 @@ Because they hate to 'reinvent-the-wheel'!
 
 Node.js
 ^^^^^^^
-Why did the Node.js developer quit his job?
-
-Because he didn't get async permission from his boss!
+ Greetings, Node.js programmers! Today, the stars predict that your code will be as performant as a Java application, but be careful not to let your asynchronous programming skills rust. Don't worry, though, for the power of Node's event-driven architecture will guide you towards success. Remember to close your streams, as leaking resources can cause issues. May your day be as smooth as a cup of Java (coffee)!
 
 .. code-block:: javascript
 
@@ -126,10 +124,7 @@ Because he didn't get async permission from his boss!
 
 Wix Velo
 ^^^^^^^
-Why did the Wix Velo developer quit her job?
-
-It didn't have the Velo-city she was looking for!
-
+ Wix Velo programmers, the stars predict that your code will be as beautiful as a website designed by a professional today, but be careful not to get lost in the vastness of the Wix platform. Don't worry, though, for the power of Velo's drag-and-drop interface will guide you towards the path of least resistance. Remember to use the correct scope, as calling a variable outside of its boundaries can cause confusion. May your day be as colorful as the customizable design options of a Wix website!
 
 .. code-block:: javascript
 
@@ -168,9 +163,8 @@ It didn't have the Velo-city she was looking for!
 WordPress HTTP API 
 ^^^^^^^
 
-Why did the WordPress developer go broke? 
+ WordPress programmers, the stars predict that your code will be as versatile as a Swiss Army knife today, but be warned of the cosmic forces that may cause issues with the HTTP API. Don't worry, though, for the power of WordPress's robust community will guide you towards the solution. Remember to handle your responses, as unexpected errors can cause your code to fail. May your day be as dynamic as the posts on a WordPress site, and may your HTTP requests be as smooth as butter!
 
-Because she used up all her cache!
 
 .. code-block:: php
 
@@ -199,9 +193,7 @@ Because she used up all her cache!
 Swift
 ^^^^^^^
 
-Why was the Swift developer always so calm?
-
-Because they had Optionals!
+ Swift programmers, the stars predict that your code will be as sleek as an iPhone today, but be careful not to get lost in the endless possibilities of the Swift language. Don't worry, though, for the power of Swift's syntax will guide you towards the path of innovation. Remember to use optionals wisely, as force-unwrapping them can cause your code to crash. May your day be as exciting as a new episode on Apple TV, and may your Swift code be as optimized as an Apple interface!
 
 .. code-block:: swift
 
@@ -242,15 +234,12 @@ Because they had Optionals!
 
 Objective-C
 ^^^^^^^
-um, no.  :)
+ Objective-C programmers, the stars predict that your code will run smoothly today, but deep down, you know it's time to move on. The universe is urging you to switch to Swift, the language that will make your life easier and your code more elegant. Don't resist the call of progress, dear programmer. Trust us, Swift is the future you've been looking for!
 
 
 Kotlin
 ^^^^^^^
-Why did the Kotlin developer quit his job? 
-
-He didn't get Nullable Types.
-
+ Kotlin programmers, the stars predict that your code will be as powerful as an Android smartphone today, but be warned of the cosmic forces that may cause issues with nullability. Don't worry, though, for the power of Kotlin's concise syntax will guide you towards the path of productivity. Remember to use safe calls, as NullPointerExceptions can cause your app to crash. May your day be as exciting as an app release on the Google Play Store, and may your Kotlin code be as elegant as the Android's design!
 
 .. code-block:: kotlin
 
@@ -294,9 +283,7 @@ He didn't get Nullable Types.
 
 C#
 ^^^^^^^
-Why do C# developers keep breaking their keyboards?
-
-Because they keep trying to use the null key.
+ Attention all C# programmers! Today, the stars predict that your code will compile without errors, but be careful of a rogue semicolon that may cause unexpected results. Don't fret, though, for your skills in object-oriented programming will guide you towards success. Remember to take breaks and stretch your legs, as sitting for too long can cause unnecessary memory leaks. May your day be as efficient as your code!
 
 .. code-block:: csharp
 
@@ -331,9 +318,7 @@ Because they keep trying to use the null key.
 
 React Native
 ^^^^^^^
-Why do React Native developers prefer iPhones over Android phones?
-
-Because iPhones have a better React-ion time!
+ React Native programmers, the stars predict that your code will be as responsive as ever today, but beware of unexpected UI changes that may throw off your design. The universe advises you to stay calm and use the power of hot reloading to make quick adjustments. Don't forget to test your app on multiple devices, as compatibility issues may arise. May your day be as smooth as the performance of your React Native app!
 
 .. code-block:: javascript
 
@@ -391,9 +376,7 @@ Because iPhones have a better React-ion time!
 
 PHP
 ^^^
-Why do programmers prefer dark mode?
-
-Because light attracts bugs, and PHP has enough of those already.
+ Greetings, PHP programmers! Today, the stars predict that you will encounter a deprecated function that you've been using for years. Don't worry, though, for the universe is giving you a sign that it's time to upgrade to a more modern version. Your perseverance will pay off, and you'll be rewarded with cleaner code and improved security. Remember to sanitize your inputs, and may your PHP code be as dynamic as your horoscope!
 
 .. code-block:: php
 
@@ -430,9 +413,7 @@ Because light attracts bugs, and PHP has enough of those already.
   
 jQuery Ajax
 ^^^^^^
-Why did the jQuery Ajax request cross the road?
-
-To get to the server-side!
+ Attention all jQuery Ajax programmers! Today, the stars predict that your requests will be successful, but be warned of the cosmic delays that may occur due to poor network connectivity. Don't fret, though, for the power of asynchronous programming will guide you towards the path of enlightenment. Remember to handle your error callbacks, as unexpected responses may cause frustration. May your day be as seamless as your jQuery Ajax requests!
 
 .. code-block:: javascript
 
@@ -461,7 +442,7 @@ To get to the server-side!
 Z/Architecture Assembler
 ^^^^^^
 
-Mainframe horoscopes is a thing.  We don't make the rules.
+ Mainframe programmers, the stars predict that your code will run at lightning-fast speeds today, but be careful not to get lost in the maze of registers and opcodes. The universe advises you to take breaks and stretch your fingers, as typing on a 3270 terminal can cause unnecessary strain. Remember to comment your code, as deciphering your own work may prove to be a challenge. May your day be as powerful as the Z/Architecture!
 
 .. code-block:: z/Architecture
 
