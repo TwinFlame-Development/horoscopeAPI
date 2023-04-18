@@ -66,8 +66,7 @@ exports.horoscopeAPIprod = async (req, res) => {
     const horoscopeJSON = require('./config.json');
 
     // Define tokens & create a nested object for the subscriptions:
-    const validTokens = ['2', 'mmEUtLATc8w_UNnHuR2'];
-    const tokenData = {
+    const tokenJSON = {
         '2': {
             name: 'Expired Token Ex',
             expiration: '03-31-2020'
@@ -78,10 +77,6 @@ exports.horoscopeAPIprod = async (req, res) => {
         },
     };
   
-    // Convert the object to a JSON object
-    const tokenJSONStr = JSON.stringify(tokenData);
-    const tokenJSON = JSON.parse(tokenJSONStr);
-    
     console.info('Received request -> ' + req.method);
 
     // Retrieve the date and sign parameters from the query string or request body
@@ -121,7 +116,7 @@ exports.horoscopeAPIprod = async (req, res) => {
         return;
     }
 
-    if (!validTokens.includes(token.toString())) {
+    if (!tokenJSON[token.toString()]) {
         let badToken = '401 - Unauthorized -> Token is not authorized: ' + token;
         console.info(badToken);
         res.status(401).send('Unauthorized');
