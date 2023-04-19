@@ -136,7 +136,7 @@ The API accepts the following parameters:
     <tr>
       <td>‘date’</td>
       <td>Yes</td>
-      <td>The date for which to retrieve the horoscope information. The date format should be MM-DD-YYYY or ‘today’, ‘tomorrow’, ‘yesterday’ or 'this_week', 'last_week', 'next_week'.</td>
+      <td>The date for which to retrieve the horoscope information. The date format should be MM-DD-YYYY (or any string conforming to the ECMAScript specification for date-time string) or ‘today’, ‘tomorrow’, ‘yesterday’ or 'this_week', 'last_week', 'next_week'.</td>
     </tr>
     <tr>
       <td>‘sign’</td>
