@@ -209,6 +209,22 @@ exports.horoscopeAPIprod = async (req, res) => {
         return;
     }
 
+    const parsedDate = Date.parse(date); // parse the input date into milliseconds since Unix epoch
+
+    if (isNaN(parsedDate)) { // check if the parsed date is NaN
+        console.info("Invalid date input -> ", date); // log an error message if the date is invalid
+    } else { // check if the parsed date is different from the formatted date
+        const formattedDate = new Date(parsedDate).toLocaleDateString("en-US", { // create a new Date object with the parsed date and format it to "mm-dd-yyyy" format
+            month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
+        }).replace(/\//g, "-"); // replace all occurrences of "/" with "-" to get "mm-dd-yyyy" format
+        if (formattedDate != date ) {
+            console.info("Date input converted from -> ", date, ' to ->', formattedDate); // log a message indicating that the input date was converted
+            date = formattedDate; // update the date variable with the formatted date
+        }
+    }
+    
     if (dateRegex.test(date)) {
         //date string was in the valid format
         
