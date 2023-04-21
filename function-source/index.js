@@ -10,7 +10,7 @@ const moment = require('moment');
 
 // Usage logging:
 async function quotaManager(token, name) {
-    console.log(`Logging API cal from -> ${name}!`);
+    console.log(`Logging API call from -> ${name}!`);
     
     // ...
     // add loging & quota management here
