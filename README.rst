@@ -346,7 +346,7 @@ Projects using the TwinFlame Horoscope API
     </tr>
     <tr>
       <td>
-        <a href="https://www.amazon.com/dp/B0C4FKGHTR/ref=sr_1_1?crid=52UA0KL1DG6K&keywords=twinflame&qid=1683298370&s=digital-skills&sprefix=twinflame%2Calexa-skills%2C111&sr=1-1">TwinFlame - Daily Horoscopes</a>
+        <a href="https://www.amazon.com/dp/B0C4FKGHTR/ref=sr_1_1?crid=52UA0KL1DG6K">TwinFlame - Daily Horoscopes</a>
       </td>
       <td>Alexa</td>
       <td>TwinFlame's Alexa Flash Briefing Skill.</td>
