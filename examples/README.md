@@ -143,14 +143,15 @@ function callback(error, response, body) {
 request(options, callback);
 ```
 
-Wix Velo ^^^^^^^ Wix Velo programmers, the stars predict that your code
-will be as beautiful as a website designed by a professional today, but
-be careful not to get lost in the vastness of the Wix platform. Don't
-worry, though, for the power of Velo's drag-and-drop interface will
-guide you towards the path of least resistance. Remember to use the
-correct scope, as calling a variable outside of its boundaries can cause
-confusion. May your day be as colorful as the customizable design
-options of a Wix website!
+## Wix Velo  
+> Wix Velo programmers, the stars predict that your code
+> will be as beautiful as a website designed by a professional today, but
+> be careful not to get lost in the vastness of the Wix platform. Don't
+> worry, though, for the power of Velo's drag-and-drop interface will
+> guide you towards the path of least resistance. Remember to use the
+> correct scope, as calling a variable outside of its boundaries can cause
+> confusion. May your day be as colorful as the customizable design
+> options of a Wix website!
 
 ``` javascript
 import {fetch} from 'wix-fetch';
@@ -186,7 +187,7 @@ getJsonData('mmEUtLATc8w_UNnHuR2', '04-01-2023', 'scorpio')
     });
 ```
 
-WordPress HTTP API ^^^^^^^
+## WordPress HTTP API 
 
 > WordPress programmers, the stars predict that your code will be as
 > versatile as a Swiss Army knife today, but be warned of the cosmic
@@ -268,12 +269,13 @@ let task = session.dataTask(with: request) { data, response, error in
 task.resume()
 ```
 
-Objective-C ^^^^^^^ Objective-C programmers, the stars predict that your
-code will run smoothly today, but deep down, you know it's time to move
-on. The universe is urging you to switch to Swift, the language that
-will make your life easier and your code more elegant. Don't resist the
-call of progress, dear programmer. Trust us, Swift is the future you've
-been looking for!
+## Objective-C  
+> Objective-C programmers, the stars predict that your
+> code will run smoothly today, but deep down, you know it's time to move
+> on. The universe is urging you to switch to Swift, the language that
+> will make your life easier and your code more elegant. Don't resist the
+> call of progress, dear programmer. Trust us, Swift is the future you've
+> been looking for!
 
 ## Kotlin
 
@@ -367,13 +369,14 @@ public class Program
 }
 ```
 
-React Native ^^^^^^^ React Native programmers, the stars predict that
-your code will be as responsive as ever today, but beware of unexpected
-UI changes that may throw off your design. The universe advises you to
-stay calm and use the power of hot reloading to make quick adjustments.
-Don't forget to test your app on multiple devices, as compatibility
-issues may arise. May your day be as smooth as the performance of your
-React Native app!
+## React Native  
+> React Native programmers, the stars predict that
+> your code will be as responsive as ever today, but beware of unexpected
+> UI changes that may throw off your design. The universe advises you to
+> stay calm and use the power of hot reloading to make quick adjustments.
+> Don't forget to test your app on multiple devices, as compatibility
+> issues may arise. May your day be as smooth as the performance of your
+> React Native app!
 
 ``` javascript
 import React, { useState, useEffect } from 'react';
@@ -469,13 +472,14 @@ export default HoroscopeAPI;
 ?>
 ```
 
-jQuery Ajax ^^^^^^ Attention all jQuery Ajax programmers! Today, the
-stars predict that your requests will be successful, but be warned of
-the cosmic delays that may occur due to poor network connectivity. Don't
-fret, though, for the power of asynchronous programming will guide you
-towards the path of enlightenment. Remember to handle your error
-callbacks, as unexpected responses may cause frustration. May your day
-be as seamless as your jQuery Ajax requests!
+## jQuery Ajax
+> Attention all jQuery Ajax programmers! Today, the
+> stars predict that your requests will be successful, but be warned of
+> the cosmic delays that may occur due to poor network connectivity. Don't
+> fret, though, for the power of asynchronous programming will guide you
+> towards the path of enlightenment. Remember to handle your error
+> callbacks, as unexpected responses may cause frustration. May your day
+> be as seamless as your jQuery Ajax requests!
 
 ``` javascript
 function tfhoro(sign, day, token) {
@@ -500,7 +504,7 @@ tfhoro('scorpio', '04-01-2023', 'mmEUtLATc8w_UNnHuR2')
  });
 ```
 
-Z/Architecture Assembler ^^^^^^
+## Z/Architecture Assembler 
 
 > Mainframe programmers, the stars predict that your code will run at
 > lightning-fast speeds today, but be careful not to get lost in the
