@@ -79,7 +79,7 @@ Bearer Token:
 curl -X POST \
   -H "Authorization: Bearer mmEUtLATc8w_UNnHuR2" \
   -H "Content-Type: application/json" \
-  -d '{"sign":"scorpio", "day":"04-01-2023"}' \
+  -d '{"sign":"scorpio", "date":"04-01-2023"}' \
   https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test
 ```
 
@@ -104,7 +104,7 @@ def tfhoro(sign, day, token):
     }
     data = {
         'sign': sign,
-        'day': day
+        'date': day
     }
     response = requests.post(url, headers=headers, data=data)
     if response.status_code == 200:
@@ -206,7 +206,7 @@ $args = array(
     ),
     'body' => json_encode(array(
         'sign' => 'scorpio',
-        'day' => '04-01-2023'
+        'date' => '04-01-2023'
     ))
 );
 
@@ -242,7 +242,7 @@ request.setValue("Bearer mmEUtLATc8w_UNnHuR2", forHTTPHeaderField: "Authorizatio
 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 let parameters: [String: Any] = [
     "sign": "scorpio",
-    "day": "04-01-2023"
+    "date": "04-01-2023"
 ]
 request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
 let session = URLSession.shared
@@ -353,7 +353,7 @@ public class Program
         string sign = "scorpio";
         string day = "04-01-2023";
         string url = "https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test";
-        var requestBody = "{\"sign\":\"" + sign + "\", \"day\":\"" + day + "\"}";
+        var requestBody = "{\"sign\":\"" + sign + "\", \"date\":\"" + day + "\"}";
 
         using (var httpClient = new HttpClient())
         {
@@ -393,7 +393,7 @@ const HoroscopeAPI = () => {
           'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test',
           {
             sign: 'scorpio',
-            day: '04-01-2023'
+            date: '04-01-2023'
           },
           {
             headers: {
@@ -447,7 +447,7 @@ export default HoroscopeAPI;
       $url = 'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test';
       $data = array(
           'sign' => $sign,
-          'day' => $day,
+          'date' => $day,
       );
       $headers = array(
           'Authorization: Bearer ' . $token,
@@ -488,7 +488,7 @@ function tfhoro(sign, day, token) {
    method: 'GET',
    data: {
      sign: sign,
-     day: day,
+     date: day,
      token: token
    },
    dataType: 'json'
@@ -546,7 +546,7 @@ PUT HTTP-REQUEST
 
 * Define the request data
 DATALEN DC AL4 LENGTH(DATA)
-DATA DC CL24'{"sign":"scorpio","day":"04-01-2023"}'
+DATA DC CL24'{"sign":"scorpio","date":"04-01-2023"}'
 
 * Define the URL
 URL DC CL100'https://us-central1-tf-natal.cloudfunctions.net/horoscopeapi_test'
