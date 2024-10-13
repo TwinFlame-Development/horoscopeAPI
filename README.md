@@ -17,8 +17,8 @@ alt="twinflame horoscope api logo" />
 -   Source code helps you build your own API & serve content
 -   We offer subscription access to our content using this API
 
-What is the TwinFlame Horoscope API? ============== This API provides
-horoscope information for the given date and zodiac sign. It requires a
+## What is the TwinFlame Horoscope API? 
+This API provides horoscope information for the given date and zodiac sign. It requires a
 valid token to access the API. If the token is invalid or has expired,
 the API returns an unauthorized response.
 
