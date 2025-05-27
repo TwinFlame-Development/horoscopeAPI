@@ -379,6 +379,25 @@ exports.horoscopeAPIprod = async (req, res) => {
         return;
     }
 
+    /*
+        Following are some example data scrubbers.  
+        They can be modified based on the content you serve to provide different versions of output on the return
+        In our use-case, we provide the ability to:
+        - strip the date prefix from the horoscope
+        - strip a historical reference from the horoscope
+        - strip both (a short horoscope)
+    */
+
+    // Regex to match and remove various date formats and timestamps from a string
+    const stripDateRegex = /((^([A-Za-z]+,\s)?[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}:\s)|(\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}[ :\-]*\s*\-\s*|[A-Z][a-z]+day,\s|^[A-Za-z]+\s\d{1,2}[a-z]{0,2},\s\d{4}\s\([A-Za-z]+\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\b\s\([A-Za-z]+\):\s))|\b[A-Za-z]+\s\d{1,2}(?:th|st|nd|rd)?\s\([^)]*\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\s\([^)]*\):\s/g;
+   
+    // Regex to strip historical event references from the horoscope:
+    //const stripEventRegex = /((?:^|[.?!])\s*|(?:In\s+((?:the\s+)?past|the\s+)?|On\s+this\s+day\s*,?\s*)|(?:This|Today)\s+day\s+in\s+)\d{4}\s*,?\s*.*?$/i;
+    const stripEventRegex = /((?:^|[.?!])\s*|(?:In\s+((?:the\s+)?past|the\s+)?|On\s+this\s+day\s*,?\s*|On\s+this\s+day\s+in\s+history\s*,?\s*)|(?:This|Today)\s+day\s+in\s+)\d{4}\s*,?\s*.*?$/i;
+
+    // Regex to strip any incomplete sentences from the horoscope after removing the historical event:
+    const incompleteSentenceRegex = /(?<=\.|\?|\!)\s*[^\.\?!]+[^\.\?!]*$/s;
+    
     let searchSign = sign.toLowerCase();
     searchSign = searchSign.charAt(0).toUpperCase() + searchSign.slice(1);
 
@@ -391,23 +410,41 @@ exports.horoscopeAPIprod = async (req, res) => {
         //call for all of the signs for the requested date:
         const allSignObj = []; 
         
+        
         zodiacSigns.forEach((sign) => {
-            let signObject = {
-                [sign]: {
-                    'current_date': date,
-                    'compatibility': horoscopeJSON[sign][date]["compatibility"],
-                    'lucky_time': horoscopeJSON[sign][date]["lucky_time"],
-                    'lucky_number': horoscopeJSON[sign][date]["lucky_number"],
-                    'mood': horoscopeJSON[sign][date]["mood"],
-                    'description': horoscopeJSON[sign][date]["description"],
-                    'color': horoscopeJSON[sign][date]["color"],
-                }
-              };
-              
-              allSignObj.push(signObject);
-          });
+            const data = horoscopeJSON[sign][date];
+            let modifiedDescription = data.description;
 
-        //const allSignJsonString = JSON.stringify(allSignObj);
+            // ✂️ Modify description based on flags
+            if (shorthoro) {
+                modifiedDescription = modifiedDescription
+                .replace(stripDateRegex, '')
+                .replace(stripEventRegex, '$1')
+                .replace(incompleteSentenceRegex, '');
+            } else {
+                if (noDate) {
+                modifiedDescription = modifiedDescription.replace(stripDateRegex, '');
+                }
+                if (noHistory) {
+                modifiedDescription = modifiedDescription
+                    .replace(stripEventRegex, '')
+                    .replace(incompleteSentenceRegex, '');
+                }
+            }
+
+            // 📦 Push modified object
+            allSignObj.push({
+                [sign]: {
+                current_date: date,
+                compatibility: data.compatibility,
+                lucky_time: data.lucky_time,
+                lucky_number: data.lucky_number,
+                mood: data.mood,
+                description: modifiedDescription,
+                color: data.color,
+                },
+            });
+        });
                       
         let goodToken = '200 - Success -> Token : ' + token + ' -> for ALL on '  + date;
         console.info(goodToken);
@@ -430,24 +467,6 @@ exports.horoscopeAPIprod = async (req, res) => {
     let mood = horoscopeJSON[searchSign][date]["mood"];
     let description = horoscopeJSON[searchSign][date]["description"];
     let color = horoscopeJSON[searchSign][date]["color"];
-
-    /*
-        Following are some example data scrubbers.  
-        They can be modified based on the content you serve to provide different versions of output on the return
-        In our use-case, we provide the ability to:
-        - strip the date prefix from the horoscope
-        - strip a historical reference from the horoscope
-        - strip both (a short horoscope)
-    */
-
-    // Regex to match and remove various date formats and timestamps from a string
-    const stripDateRegex = /((^([A-Za-z]+,\s)?[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}:\s)|(\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}[ :\-]*\s*\-\s*|[A-Z][a-z]+day,\s|^[A-Za-z]+\s\d{1,2}[a-z]{0,2},\s\d{4}\s\([A-Za-z]+\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\b\s\([A-Za-z]+\):\s))|\b[A-Za-z]+\s\d{1,2}(?:th|st|nd|rd)?\s\([^)]*\):\s|\b[A-Za-z]+\s\d{1,2}(?:st|nd|rd|th)?,\s\d{4}\s\([^)]*\):\s/g;
-   
-    // Regex to strip historical event references from the horoscope:
-    const stripEventRegex = /((?:^|[.?!])\s*|(?:In\s+((?:the\s+)?past|the\s+)?|On\s+this\s+day\s*,?\s*)|(?:This|Today)\s+day\s+in\s+)\d{4}\s*,?\s*.*?$/i;
-   
-    // Regex to strip any incomplete sentences from the horoscope after removing the historical event:
-    const incompleteSentenceRegex = /(?<=\.|\?|\!)\s*[^\.\?!]+[^\.\?!]*$/s;
     
     if (!!shorthoro) {
         //user wants a shoter horoscope; strip date prefix & historical event references:
