@@ -2,11 +2,34 @@
 ** The TwinFlame Horoscope API
 ** - returns daily horoscopes
 **
-** ©2023 TwinFlame Development, LLC
+** ©2023-2025 TwinFlame Development, LLC
 ** https://github.com/TwinFlame-Development/horoscopeAPI
 */
 
 const moment = require('moment');
+
+// Imports the Google Cloud client library
+const {Translate} = require('@google-cloud/translate').v2;
+
+// Instantiates a client
+const translate = new Translate({<your_projectId>});
+
+/**
+ * Translates the provided text into the specified target language.
+ *
+ * @param {string} text - The text to translate.
+ * @param {string} targetLanguage - The target language code (e.g., 'ru', 'es').
+ * @returns {Promise<string>} - The translated text.
+ */
+async function translateText(text, targetLanguage) {
+  try {
+    const [translation] = await translate.translate(text, targetLanguage);
+    return translation;
+  } catch (error) {
+    console.error('Translation error:', error);
+    throw error;
+  }
+}
 
 // Usage logging:
 async function quotaManager(token, name) {
@@ -69,29 +92,28 @@ exports.horoscopeAPIprod = async (req, res) => {
     const tokenJSON = {
         '2': {
             name: 'Expired Token Ex',
-            expiration: '03-31-2020'
+            expiration: '03-31-2020',
+            translation_entitlement: true
         },
         'mmEUtLATc8w_UNnHuR2': {
             name: 'Github Trial',
-            expiration: '05-01-2027'
+            expiration: '05-01-2027',
+            translation_entitlement: true
         },
     };
   
     console.info('Received request -> ' + req.method);
 
-    // Retrieve the date and sign parameters from the query string or request body
-    let date = typeof req.query.date !== 'undefined' ? req.query.date : req.body.date;
-    let sign = typeof req.query.sign !== 'undefined' ? req.query.sign : req.body.sign;
+    // --- Params ---
+    const qs = req.query, body = req.body || {};
+    let date  = (typeof qs.date  !== 'undefined') ? qs.date  : body.date;
+    let sign  = (typeof qs.sign  !== 'undefined') ? qs.sign  : body.sign;
+    let range = (typeof qs.range !== 'undefined') ? qs.range : body.range;
+    let noDate    = (typeof qs.nodate    !== 'undefined') ? qs.nodate    : body.nodate;
+    let noHistory = (typeof qs.nohistory !== 'undefined') ? qs.nohistory : body.nohistory;
+    let shorthoro = (typeof qs.shorthoro !== 'undefined') ? qs.shorthoro : body.shorthoro;
+    let language  = (typeof qs.language  !== 'undefined') ? qs.language  : body.language;
 
-    // Retrieve the authentication token from the query string, request body, or headers
-    let token = req.query.token || req.body.token || req.headers['x-auth-token'] || (req.headers['authorization'] && req.headers['authorization'].split(' ')[1]);
-    
-    // Retrieve the range, noDate, noHistory, and shorthoro parameters from the query string or request body
-    let range = typeof req.query.range !== 'undefined' ? req.query.range : req.body.range;
-    let noDate = typeof req.query.nodate !== 'undefined' ? req.query.nodate : req.body.nodate;
-    let noHistory = typeof req.query.nohistory !== 'undefined' ? req.query.nohistory : req.body.nohistory;
-    let shorthoro = typeof req.query.shorthoro !== 'undefined' ? req.query.shorthoro : req.body.shorthoro;
-    
     //check that parameters are not sent more than once:
     if (Array.isArray(sign) || Array.isArray(date) || Array.isArray(token)) {
         let badSign = '400 Bad Request - sign is null!';
@@ -173,6 +195,57 @@ exports.horoscopeAPIprod = async (req, res) => {
           });
     
         return
+    }
+
+    // Validate translation entitlement
+    var performTranslation = false;
+
+    if (!!language) {
+        // Only allow specific languages
+        const allowedLanguages = [
+            'ab', 'ace', 'ach', 'af', 'sq', 'alz', 'am', 'ar', 'hy', 'as', 'awa', 'ay', 'az',
+            'ban', 'bm', 'ba', 'eu', 'btx', 'bts', 'bbc', 'be', 'bem', 'bn', 'bew', 'bho', 'bik', 'bs', 'br', 'bg', 'bua',
+            'yue', 'ca', 'ceb', 'ny', 'zh-CN', 'zh', 'zh-TW', 'cv', 'co', 'crh', 'hr', 'cs',
+            'da', 'din', 'dv', 'doi', 'dov', 'nl', 'dz',
+            'eo', 'et', 'ee', 
+            'fj', 'fil', 'tl', 'fi', 'fr', 'fr-FR', 'fr-CA', 'fy', 'ff',
+            'gaa', 'gl', 'lg', 'ka', 'de', 'el', 'gn', 'gu',
+            'ht', 'cnh', 'ha', 'haw', 'iw', 'he', 'hil', 'hi', 'hmn', 'hu', 'hrx',
+            'is', 'ig', 'ilo', 'id', 'ga', 'it',
+            'ja', 'jw', 'jv',
+            'kn', 'pam', 'kk', 'km', 'cgg', 'rw', 'ktu', 'gom', 'ko', 'kri', 'ku', 'ckb', 'ky',
+            'lo', 'ltg', 'la', 'lv', 'lij', 'li', 'ln', 'lt', 'lmo', 'luo', 'lb',
+            'mk', 'mai', 'mak', 'mg', 'ms', 'ms-Arab', 'ml', 'mt', 'mi', 'mr', 'chm', 'mni-Mtei', 'min', 'lus', 'mn', 'my',
+            'nr', 'new', 'ne', 'nso', 'no', 'nus',
+            'oc', 'or', 'om',
+            'pag', 'pap', 'ps', 'fa', 'pl', 'pt', 'pt-PT', 'pt-BR', 'pa', 'pa-Arab', 
+            'qu', 
+            'rom', 'ro', 'rn', 'ru',
+            'sm', 'sg', 'sa', 'gd', 'sr', 'st', 'crs', 'shn', 'sn', 'scn', 'szl', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su', 'sw', 'ss', 'sv',
+            'tg', 'ta', 'tt', 'te', 'tet', 'th', 'ti', 'ts', 'tn', 'tr', 'tk', 'ak',
+            'uk', 'ur', 'ug', 'uz', 
+            'vi',
+            'cy', 
+            'xh',
+            'yi', 'yo', 'yua', 
+            'zu'
+        ];
+        if (!allowedLanguages.includes(language)) {
+            console.info(`400 - Bad Request -> Unsupported language: ${language}`);
+            res.status(400).send('Unsupported translation language');
+            return;
+        }
+
+        // Check if token is entitled to translation
+        if (!tokenJSON[token.toString()].translation_entitlement) {
+            let badToken = '401 - Unauthorized -> Token is not authorized for translation: ' + token;
+            console.info(badToken);
+            res.status(401).send('Translation Unauthorized');
+            return;
+        } else {
+            performTranslation = true;
+            console.info("User: ", tokenJSON[token.toString()].name," requests translation to -> ", language); // log translation request
+        }
     }
     
     //validate sign:
@@ -328,8 +401,10 @@ exports.horoscopeAPIprod = async (req, res) => {
                         return;
                     }
                     
-                    let description = horoscopeJSON["weekly"][searchSign][weeklyDateFormatted]["description"];
-                            
+                    let description = performTranslation
+                        ? await translateText(horoscopeJSON["weekly"][searchSign][weeklyDateFormatted]["description"], language)
+                        : horoscopeJSON["weekly"][searchSign][weeklyDateFormatted]["description"];
+              
                     console.info('200 - Success -> Token : ' + token + ' -> Weekly horoscope for - ', weeklyDateFormatted); 
 
                     res.status(200).json({
@@ -432,6 +507,10 @@ exports.horoscopeAPIprod = async (req, res) => {
                 }
             }
 
+            if (performTranslation) {
+                modifiedDescription = await translateText(modifiedDescription, language);
+            }
+
             // 📦 Push modified object
             allSignObj.push({
                 [sign]: {
@@ -519,6 +598,10 @@ exports.horoscopeAPIprod = async (req, res) => {
         };
 
     };
+
+    if (performTranslation) {
+        description = await translateText(description, language);
+    }
     
     let goodToken = '200 - Success -> Token : ' + token + ' -> for ' + searchSign + ' on '  + date;
     console.info(goodToken);
