@@ -61,6 +61,14 @@ horoscopes in your applications.
 Interested in the subscription? Feel free to contact us at
 <partnerships@twinflamedev.com>
 
+More information also here:
+
+[TwinFlame Hosted API](https://www.twinflamedev.com/api).
+
+and/or:
+
+[TwinFlame on RapidAPI](https://rapidapi.com/team/twinflame-development-twinflame-development-default).
+
 ## API Endpoint  
 
 A hosted test endpoint is available:
@@ -159,6 +167,12 @@ The API accepts the following parameters:
    <td>‘range’</td>
    <td>No</td>
    <td>An optional parameter that, when present, returns the earliest and latest dates for which horoscope information is available.</td>
+ </tr>
+ <tr>
+   <td>‘language’</td>
+   <td>No</td>
+   <td>An optional parameter that, when present, translates the horoscope. The value specified is the ISO-639 code for language translation, ex: for Spanish `es`. 
+    (https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)</td>
  </tr>
 
  </table>
