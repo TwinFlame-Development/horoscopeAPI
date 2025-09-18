@@ -67,7 +67,7 @@ More information also here:
 
 and/or:
 
-[TwinFlame on RapidAPI](https://rapidapi.com/team/twinflame-development-twinflame-development-default).
+[TwinFlame on RapidAPI](https://rapidapi.com/organization/twinflame-development).
 
 ## API Endpoint  
 
